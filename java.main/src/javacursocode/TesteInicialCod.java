@@ -5,3 +5,5 @@ public class TesteInicialCod {
         System.out.print("teste codigo inicial");
     }
 }
+
+// criando o primeiro package e class sozinho // 
