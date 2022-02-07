@@ -6,7 +6,7 @@ public class EntradaDeDados {
         Scanner objeto = new Scanner(System.in);
         String nome = objeto.nextLine();
         float nota = objeto.nextFloat();
-        System.out.format("O nome e a nota é:", nome, nota);
+        System.out.format("A nota de %s é de %.1f \n", nome, nota);
         objeto.close();
 }
 
