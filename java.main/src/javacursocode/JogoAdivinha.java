@@ -14,8 +14,7 @@ public class JogoAdivinha {
             if (numero == random) {
                 System.out.println("Você acertou, o número era:" + random);
                 break;
-            }
-        else {
+            } else {
           System.out.println("Você errou, o número era:" + random);
 
         }
@@ -23,6 +22,5 @@ public class JogoAdivinha {
     }
      armazenarNum.close();
     
-
     }
 }
