@@ -5,7 +5,7 @@ public class FatorialComExcecoes {
     public static void main(String[]args) {
         int fat;
         Scanner objeto = new Scanner(System.in);
-        System.out.println("Digite um número para o resultado do fatorial. Obs: diferente de 0. Digite aqui: ");
+        System.out.println("Digite um número para o resultado do fatorial. Obs:diferente de 0. Digite aqui: ");
         Integer leitura = objeto.nextInt();
         fat = 1;
         int resultadoPost;
@@ -18,7 +18,7 @@ public class FatorialComExcecoes {
                 break;
                 }           
             }
-            while(leitura>1) {
+            while(leitura>0) {
                 fat = fat * leitura;
                 leitura--;     
                 resultadoPost = fat;        
