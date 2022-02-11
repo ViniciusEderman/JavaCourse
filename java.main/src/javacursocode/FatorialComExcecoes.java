@@ -12,7 +12,7 @@ public class FatorialComExcecoes {
 
             while (leitura<=0) {
                 System.out.println("Programa encerrado");
-                break;
+            break;
             }
             while(leitura>1) {
                 fat = fat * leitura;
