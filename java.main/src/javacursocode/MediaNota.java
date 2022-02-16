@@ -23,6 +23,7 @@ import java.util.Scanner;
         nota5 = teclado.nextDouble();
 
         media = (nota1 + nota2 + nota3 + nota4 + nota5)/5;
+         System.out.println("Sua média é: "+ media);
 
     teclado.close();
 
