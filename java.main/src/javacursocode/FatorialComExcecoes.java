@@ -10,18 +10,15 @@ public class FatorialComExcecoes {
         fat = 1;
         objeto.close(); 
 
-            while (leitura<=0) {
-                System.out.println("Programa encerrado");
-                if (leitura<=0) {
-                    System.out.print("Encerando...");
-                break;
-                }           
-            }
-            while(leitura>0) {
-                fat = fat * leitura;
-                leitura--;              
-            }            
-            System.out.print("O fatorial é: " +fat); 
+        if (leitura<=0) {
+            System.out.println("Programa encerrado");
+            System.out.print("Encerando...");
+            return;           
+        }
+        while(leitura>0) {
+            fat = fat * leitura;
+            leitura--;     
+        }
+        System.out.print("O fatorial é :"  +fat);  
     }
 }
-    
