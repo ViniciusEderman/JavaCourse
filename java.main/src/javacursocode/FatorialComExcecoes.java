@@ -21,7 +21,7 @@ public class FatorialComExcecoes {
                 fat = fat * leitura;
                 leitura--;              
             }            
-            System.out.print("O fatorial é :"  +fat); 
+            System.out.print("O fatorial é: " +fat); 
     }
 }
     
