@@ -8,7 +8,6 @@ public class FatorialComExcecoes {
         System.out.println("Digite um número para o resultado do fatorial. Obs:diferente de 0. Digite aqui: ");
         Integer leitura = objeto.nextInt();
         fat = 1;
-        int resultadoPost;
         objeto.close(); 
 
             while (leitura<=0) {
@@ -20,10 +19,9 @@ public class FatorialComExcecoes {
             }
             while(leitura>0) {
                 fat = fat * leitura;
-                leitura--;     
-                resultadoPost = fat;        
-                System.out.print("O fatorial é :"  +resultadoPost);  
+                leitura--;              
             }            
+            System.out.print("O fatorial é :"  +fat); 
     }
 }
     
