@@ -10,6 +10,17 @@ public class ClasseCanetaTeste {
     modeloCaneta.destampar();
     modeloCaneta.statusMetd();
     modeloCaneta.rabiscar();
+
+    // nova caneta //
+        //criar modelo // 
     
+    ClasseEmJava modeloCaneta1 = new ClasseEmJava();
+
+    modeloCaneta1.cor = "Preta";
+    modeloCaneta1.pontaDaCaneta = 0.7f;
+    modeloCaneta1.tampar();
+    modeloCaneta1.statusMetd();
+    modeloCaneta1.rabiscar();
+
     }  
 }
