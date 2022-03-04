@@ -19,5 +19,13 @@ public class BancoMain {
         user2.depositar(8520.00f);
         user2.estadoAtual();
         user2.sacar(500.00f);
+
+        Banco user3 = new Banco();
+        user3.setnumConta(231721);
+        user3.setdonoConta("André Luís");
+        user3.abrirConta("CC");
+        user3.depositar(12500.90f);
+        user3.estadoAtual();
+        user3.sacar(1000.00f);
     }
 }
