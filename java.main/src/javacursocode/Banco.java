@@ -16,7 +16,7 @@ class Banco {
         System.out.println("Tipo da conta: " + this.gettipoConta());
         System.out.println("Dono da conta: " + this.getdonoConta());
         System.out.println("Saldo da conta: " + this.getsaldoConta());
-        System.out.println("Statu atual da conta: " + this.getstatusConta());
+        System.out.println("Status atual da conta: " + this.getstatusConta());
     }
     
     public Banco() {
