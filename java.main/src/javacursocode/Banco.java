@@ -10,78 +10,87 @@ class Banco {
     private boolean statusConta;
 
     // Iniciando os métodos // 
-
-    public Banco(float s, boolean st) {
-        saldoConta = s;
-        s = 0;
-        statusConta = st;
-        st = false;
+    public void estadoAtual() {
+        System.out.println("____________________________");
+        System.out.println("Conta: " + this.getnumConta());
+        System.out.println("Tipo da conta: " + this.gettipoConta());
+        System.out.println("Dono da conta: " + this.getdonoConta());
+        System.out.println("Saldo da conta: " + this.getsaldoConta());
+        System.out.println("Statu atual da conta: " + this.getstatusConta());
+    }
+    
+    public Banco() {
+        this.setsaldoConta(0); 
+        this.setstatusConta(false); 
     }
     public void setnumConta(int n){
-        numConta = n;
+        this.numConta = n;
     }
     public int getnumConta() {
         return numConta;
     }
     public void settipoConta(String t) {
-        tipoConta = t;
+        this.tipoConta = t;
     }
     public String gettipoConta() {
         return tipoConta;
     }
     public void setdonoConta(String d) {
-        donoConta = d;
+        this.donoConta = d;
     }
     public String getdonoConta() {
         return donoConta;
     }
     public void setsaldoConta(float s) {
-        saldoConta = s;
+        this.saldoConta = s;
     }
     public float getsaldoConta() {
         return saldoConta;
     }
     public void setstatusConta(boolean st) {
-        statusConta = st;
+        this.statusConta = st;
     }
     public boolean getstatusConta() {
         return statusConta;
     }  
     public void abrirConta(String t) {
-        settipoConta(t);
-        setstatusConta(true);
+        this.settipoConta(t);
+        this.setstatusConta(true);
          if (t == "CC") {
-             saldoConta = 50.00f;
+             this.setsaldoConta(50.00f); 
          }
-         if (t == "CP") {
-             saldoConta = 150.00f;
+         else if (t == "CP") {
+             this.setsaldoConta(150.00f); 
          }
+         System.out.println("Conta aberta!");
     }
     public void fecharConta() {
-        if (saldoConta > 0) {
+        if (this.getsaldoConta() > 0) {
             System.out.println("Conta ainda com dinheiro, não permitido o fechamento");
         }
-        if (saldoConta < 0) {
+        else if (this.getsaldoConta() < 0) {
             System.out.println("Conta no negativo, não permitido o fechamento");
         }
         else {
-            setstatusConta(false);
+            this.setstatusConta(false);
+            System.out.println("Conta fechada");
         }
     }
     public void depositar(float v) {
         if (statusConta == true) {
             saldoConta += v;
+            System.out.println("Depósito realizado com sucesso na conta " + this.getdonoConta());
         }
         else {
-            System.out.println("Conta fechada, não possível depositar nenhum valor");
+            System.out.println("Conta fechada, não é possível depositar");
         }
     }
     public void sacar(float v) {
         if (statusConta = true) {
-          if(saldoConta > v) {
+          if(saldoConta >= v) {
               saldoConta = saldoConta - v; 
+                System.out.println("Saque realizado com sucesso na conta de " + this.getdonoConta());
           }
-        
           else {
             System.out.println("Saldo insuficiente");
         }
@@ -103,12 +112,13 @@ class Banco {
          if (statusConta == true) {
            if (saldoConta > value) {
                saldoConta = saldoConta - value;
+               System.out.println("Mensalidade paga com sucesso por " + this.getdonoConta());
             }
             else {
               System.out.println("Saldo insuficiente");
             } }
          else {
-            System.out.println("Impossível pagar");
+            System.out.println("Impossível pagar em uma conta fechada");
          }    
     }
-}
+} 
