@@ -1,5 +1,5 @@
 package javacursocode;
-public class InterfaceControl {
+public interface InterfaceControl {
     public abstract void ligar();
     public abstract void desligar();
     public abstract void abrirMenu();
