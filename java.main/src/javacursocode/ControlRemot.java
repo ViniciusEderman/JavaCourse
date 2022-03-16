@@ -1,4 +1,3 @@
-/*
 package javacursocode;
 public class ControlRemot implements InterfaceControl {
     // atributes    
@@ -33,17 +32,17 @@ public class ControlRemot implements InterfaceControl {
     }
 
     public void ligar() {
-        throw new UnsupportedOperationException("Not supported");
+        // throw new UnsupportedOperationException("Not supported");
         this.setLigado(true);
     }
 
     public void desligar() {
-        throw new UnsupportedOperationException("Not supported");
+        // throw new UnsupportedOperationException("Not supported");
         this.setLigado(false);
     }
 
     public void abrirMenu() {
-        throw new UnsupportedOperationException("Not supported");
+       // throw new UnsupportedOperationException("Not supported");
         System.out.println("Está ligado? " + this.getLigado());
         System.out.println("Está tocando? " + this.getTocando());
         System.out.println("Volume: " + this.getVolm());
@@ -53,7 +52,7 @@ public class ControlRemot implements InterfaceControl {
     }
 
     public void fecharMenu() {
-        throw new UnsupportedOperationException("Not supported");
+        // throw new UnsupportedOperationException("Not supported");
         System.out.println("Fechando menu...");
     }
 
@@ -111,4 +110,3 @@ public class ControlRemot implements InterfaceControl {
         }
         }
 }
-*/
