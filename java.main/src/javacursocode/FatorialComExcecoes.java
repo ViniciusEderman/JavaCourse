@@ -12,7 +12,7 @@ public class FatorialComExcecoes {
 
         if (leitura<=0) {
             System.out.println("Programa encerrado");
-            System.out.print("Encerando...");
+            System.out.print("Encerando...30");
             return;           
         }
         while(leitura>0) {
@@ -22,3 +22,4 @@ public class FatorialComExcecoes {
         System.out.print("O fatorial é :"  +fat);  
     }
 }
+// ALGUNS PROBLEMAS COM NÚMEROS ESPECÍFICOS(BUSCAR AJUDA). // 

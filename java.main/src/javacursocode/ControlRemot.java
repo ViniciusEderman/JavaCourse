@@ -1,3 +1,4 @@
+/*
 package javacursocode;
 public class ControlRemot implements InterfaceControl {
     // atributes    
@@ -110,3 +111,4 @@ public class ControlRemot implements InterfaceControl {
         }
         }
 }
+*/
