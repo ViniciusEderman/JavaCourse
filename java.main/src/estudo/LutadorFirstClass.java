@@ -23,6 +23,9 @@ class LutadorFirstClass {
         derrotas = de;
         empates = em;
     }
+    public String getCategoria() {
+        return categoria;
+    }
     public String getNome() {
         return nome;
     }
