@@ -1,114 +1,120 @@
 package estudo;
 
-class LutadorFirstClass {
+public class LutadorFirstClass {
     // ATRIBUTES 
     private String nome;
     private String nacionalidade;
     private int idade;
-    private boolean altura;
+    private double altura;
     private double peso;
     private String categoria;
-    private int vitorias;
-    private int derrotas;
-    private int empates;
+    private int vitorias, derrotas, empates;
 
     // SPECIALS ATRIBUTES 
-    public LutadorFirstClass(String no, String na, int id, boolean al, double pe, int vi, int de, int em) {
-        nome = no;
-        nacionalidade = na;
-        idade = id;
-        altura = al;
-        setPeso(pe);
-        vitorias = vi;
-        derrotas = de;
-        empates = em;
-    }
-    public String getCategoria() {
-        return categoria;
+    public LutadorFirstClass(String no, String na, int id, double al, double pe, int vi, int de, int em) {
+        this.nome = no;
+        this.nacionalidade = na;
+        this.idade = id;
+        this.altura = al;
+        this.setPeso(pe);
+        this.vitorias = vi;
+        this.derrotas = de;
+        this.empates = em;
+
     }
     public String getNome() {
         return nome;
     }
     public void setNome(String no) {
-        nome = no;
+        this.nome = no;
     }
     public double getPeso() {
         return peso;
     }
     public void setPeso(double pe) {
-        peso = pe;
-        setCategoria();
+        this.peso = pe;
+        this.setCategoria();
     }
     public String getNacionalidade() {
         return nacionalidade;
     }
     public void setNacionalidade(String na) {
-        nacionalidade = na;
+        this.nacionalidade = na;
     }
     public int getIdade() {
         return idade;
     }
     public void setIdade(int id) {
-        idade = id;
+        this.idade = id;
     }
-    public Boolean getAltura() {
+    public double getAltura() {
         return altura;
     }
-    public void setAltura(Boolean al) {
-        altura = al;
+    public void setAltura(double al) {
+        this.altura = al;
     }
     public int getVitorias() {
         return vitorias;
     }
     public void setVitorias(int vi) {
-        vitorias = vi;
+        this.vitorias = vi;
     }
     public int getDerrotas() {
         return derrotas;
     }
     public void setDerrotas(int de) {
-        derrotas = de;
+        this.derrotas = de;
     }
     public int getEmpates() {
         return empates;
     }
     public void setEmpates(int em) {
-        empates = em;
+        this.empates = em;
     }
     private void setCategoria() {
-        if(peso < 52.2) {
-            categoria = "Inválido";
+        if(this.peso < 52.2) {
+            this.categoria = "Inválido";
         }
-        else if(peso <= 70.3) {
-            categoria = "Leve";
+        else if(this.peso <= 70.3) {
+            this.categoria = "Leve";
         }
-        else if(peso <= 83.9) {
-            categoria = "Médio";
+        else if(this.peso <= 83.9) {
+            this.categoria = "Médio";
         }
-        else if(peso <= 120.2) {
-            categoria = "Pesado";
+        else if(this.peso <= 120.2) {
+            this.categoria = "Pesado";
         }
         else {
-            categoria = "Inválido";
+            this.categoria = "Inválido";
         }
     }
+    public String getCategoria() {
+        return categoria;
+    }
     public void ganharLuta() {  
-        setVitorias(getVitorias() + 1);
+        this.setVitorias(this.getVitorias() + 1);
     }
     public void perderLuta() {  
-        setDerrotas(getDerrotas() + 1);
+        this.setDerrotas(this.getDerrotas() + 1);
     }
     public void empatarLuta() {
-        setEmpates(getEmpates() + 1);
+        this.setEmpates(this.getEmpates() + 1);
     }
     public void apresentar() {
-        System.out.println("Lutador: " + getNome());
-        System.out.println("Origem: " + getNacionalidade());
-        System.out.println("Idade: " + getIdade());
-        System.out.println("Altura: " + getAltura());
-        System.out.println("Pesando: " + getPeso());
-        System.out.println("Vitórias: " + getVitorias());
-        System.out.println("Derrotas: " + getDerrotas());
-        System.out.println("Empates: " + getEmpates());
+        System.out.println("____________________________");
+        System.out.println("Lutador: " + this.getNome());
+        System.out.println("Origem: " + this.getNacionalidade());
+        System.out.println("Idade: " + this.getIdade());
+        System.out.println("Altura: " + this.getAltura());
+        System.out.println("Pesando: " + this.getPeso());
+        System.out.println("Vitórias: " + this.getVitorias());
+        System.out.println("Derrotas: " + this.getDerrotas());
+        System.out.println("Empates: " + this.getEmpates());
+    }
+    public void status() {
+        System.out.println(this.getNome() + "é um peso: " + this.getCategoria());
+        System.out.println("Ganhou: " + this.getVitorias());
+        System.out.println("Empatou: " + this.getEmpates());
+        System.out.println("Perdeu: " + this.getDerrotas());
     }
 }
