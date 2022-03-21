@@ -63,6 +63,7 @@ public class ClassFight {
         this.desafiante.apresentar();
         Random aleatorio = new Random();
         int vencedor = aleatorio.nextInt(3);
+        System.out.println("=========== Resultado da Luta ===========");
         switch(vencedor) {
             case 0:
                 System.out.println("Empatou!");
