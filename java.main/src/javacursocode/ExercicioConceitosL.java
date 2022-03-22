@@ -87,7 +87,7 @@ public class ExercicioConceitosL {
     }
 
     public String detalhes() {
-        return "Livro{" + "titulo=" + titulo + "autor=" + autor + ", total de paginas=" + totPags + ", pagina atual=" + pagAtual + ", aberto=" + aberto + ", leitor=" + leitor + "}";
+        return "Livro{" + "titulo= " + titulo + "\n autor= " + autor + "\n total de paginas= " + totPags + "\n pagina atual= " + pagAtual + "\n aberto= " + aberto + "\n leitor= " + leitor.getNome() + "}";
     }
 
     public ExercicioConceitosL(String titulo, String autor, int totalpaginas, boolean aberto, ExercicioConceitosP pessoa, int pagatual) {
