@@ -1,18 +1,18 @@
 package javacursocode;
 
 public class ExercicioConceitosL {
-    public String livro;
+    public String titulo;
     public String autor;
     public int totPags;
     public int pagAtual;
     public boolean aberto; 
-    public String leitor;
+    public ExercicioConceitosP leitor;
 
-    public String getLivro() {
-        return livro;
+    public String getTitulo() {
+        return titulo;
     }
-    public void setLivro(String l) {
-        this.livro = l;
+    public void setTitulo(String l) {
+        this.titulo = l;
     }
 
     public String getAutor() {
@@ -43,10 +43,10 @@ public class ExercicioConceitosL {
         this.aberto = sn;
     }
 
-    public String getLeitor() {
+    public ExercicioConceitosP getLeitor() {
         return leitor;
     }
-    public void setLeitor(String leit) {
+     public void setLeitor(ExercicioConceitosP leit) {
         this.leitor = leit;
     }
 
@@ -84,5 +84,9 @@ public class ExercicioConceitosL {
         if(this.aberto == true) {
             System.out.println("A sua página atual é: "+ getPaginaAtual());
         }
+    }
+
+    public String detalhes() {
+        return "Livro{" + "titulo=" + titulo + "autor=" + autor + ", total de paginas=" + totPags + ", pagina atual=" + pagAtual + ", aberto=" + aberto + ", leitor=" + leitor + "}";
     }
 }
