@@ -50,12 +50,11 @@ public class ExercicioConceitosL {
         this.leitor = leit;
     }
 
-    public void detalhes() {
-
-    }
-
     public void abrirLivro() {
-
+        if(this.aberto == false) {
+            this.aberto = true;
+            System.out.println("Livro aberto");
+        }
     }
 
     public void fecharLivro() {
@@ -71,6 +70,6 @@ public class ExercicioConceitosL {
     }
 
     public void atualPag() {
-        
+
     }
 }
