@@ -89,4 +89,13 @@ public class ExercicioConceitosL {
     public String detalhes() {
         return "Livro{" + "titulo=" + titulo + "autor=" + autor + ", total de paginas=" + totPags + ", pagina atual=" + pagAtual + ", aberto=" + aberto + ", leitor=" + leitor + "}";
     }
+
+    public ExercicioConceitosL(String titulo, String autor, int totalpaginas, boolean aberto, ExercicioConceitosP pessoa, int pagatual) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.totPags = totalpaginas;
+        this.aberto = false;
+        this.pagAtual = pagatual;
+        this.leitor = pessoa;
+    }
 }
