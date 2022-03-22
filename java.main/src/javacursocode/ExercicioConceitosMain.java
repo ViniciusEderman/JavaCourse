@@ -14,6 +14,8 @@ public class ExercicioConceitosMain {
      l[1] = new ExercicioConceitosL("Fome de amor", "Laura Justina", 122, false, p[3], 0);
      l[2] = new ExercicioConceitosL("Politcs", "Fredir Clark", 388, false, null, 0);
 
+     l[0].abrirLivro();
+     l[0].avancarPag();
      System.out.println(l[0].detalhes());
    } 
 }
