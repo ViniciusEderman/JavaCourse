@@ -4,7 +4,6 @@ public class ExercicioConceitosP {
     public String nome;
     public int idade;
     public char sexo;
-    private boolean aniversario;
 
     public String getNome() {
         return nome;
@@ -28,8 +27,12 @@ public class ExercicioConceitosP {
     }
 
     public void fazerAniv() {
-        if (aniversario == true) {
-            this.idade = +1;
-        }
+        this.idade ++;
+    }
+
+    public ExercicioConceitosP(String nome, int idade, char sexo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
     }
 }

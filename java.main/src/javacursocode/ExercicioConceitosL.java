@@ -60,7 +60,7 @@ public class ExercicioConceitosL {
     public void fecharLivro() {
         if(this.aberto == true) {
             this.aberto = false;
-            System.out.println("Libro fechado");
+            System.out.println("Livro fechado");
         }
     }
 
