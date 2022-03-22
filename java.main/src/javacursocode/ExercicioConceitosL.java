@@ -54,5 +54,23 @@ public class ExercicioConceitosL {
 
     }
 
+    public void abrirLivro() {
 
+    }
+
+    public void fecharLivro() {
+
+    }
+
+    public void avancarPag() {
+
+    }
+
+    public void voltarPag() {
+
+    }
+
+    public void atualPag() {
+        
+    }
 }
