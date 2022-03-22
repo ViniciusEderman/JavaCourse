@@ -58,18 +58,31 @@ public class ExercicioConceitosL {
     }
 
     public void fecharLivro() {
-
+        if(this.aberto == true) {
+            this.aberto = false;
+            System.out.println("Libro fechado");
+        }
     }
 
     public void avancarPag() {
-
+        if(this.aberto == true) {
+            this.pagAtual = +1;
+        } else{
+            System.out.println("Seu livro está fechado, não há como avançar a página.");
+        }
     }
 
     public void voltarPag() {
-
+        if(this.aberto == true) {
+            this.pagAtual = -1;
+        } else{
+            System.out.println("Seu livro está fechado, não há como avançar a página.");
+        }
     }
 
     public void atualPag() {
-
+        if(this.aberto == true) {
+            System.out.println("A sua página atual é: "+ getPaginaAtual());
+        }
     }
 }
