@@ -1,6 +1,6 @@
 package estudo;
 
-public class ClassPeopleStudent {
+public class ClassPeopleStudent extends ClassPeople {
     private int register;
     private String course;
 

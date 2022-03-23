@@ -1,6 +1,6 @@
 package estudo;
 
-public class ClassPeopleEmployee {
+public class ClassPeopleEmployee extends ClassPeople {
     private String wordSector;
     private boolean working;
 

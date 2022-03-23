@@ -1,6 +1,6 @@
 package estudo;
 
-public class ClassPeopleTeacher {
+public class ClassPeopleTeacher extends ClassPeople {
     private double salary;
     private String specialty;
 
