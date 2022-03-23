@@ -6,11 +6,20 @@ public class ClassPeople {
     private String name; 
     private String sex;     
     private int yearsOld;
+    private int CPF;
 
 //  Metódos 
 
     public void doHappy() {
         this.yearsOld ++;   
+    }
+
+    public int getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(int cPF) {
+        this.CPF = cPF;
     }
 
     public int getYearsOld() {
