@@ -5,7 +5,7 @@ public class ClassPeopleTeacher {
     private String specialty;
 
     public void upSalary() {
-        this.salary += 1850.20;
+        // salary alteração 
     }
 
     public String getSpecialty() {
