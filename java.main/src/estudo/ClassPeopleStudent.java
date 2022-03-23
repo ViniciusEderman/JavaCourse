@@ -5,7 +5,7 @@ public class ClassPeopleStudent {
     private String course;
 
     public void cancellCourse(){
-
+    
     }
 
     public String getCourse() {
@@ -23,6 +23,4 @@ public class ClassPeopleStudent {
     public void setRegister(int register) {
         this.register = register;
     }
-    
-    
 }

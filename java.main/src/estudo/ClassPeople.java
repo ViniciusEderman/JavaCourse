@@ -10,7 +10,7 @@ public class ClassPeople {
 //  Metódos 
 
     public void doHappy() {
-        this.yearsOld ++;
+        this.yearsOld ++;   
     }
 
     public int getYearsOld() {
