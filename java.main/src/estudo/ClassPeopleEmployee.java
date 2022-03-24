@@ -5,10 +5,10 @@ public class ClassPeopleEmployee extends ClassPeople {
     private boolean working;
 
     public void changeWork() {
-        // mudar o trabalho neste paramet // 
+        this.working = !this.working;
     }
 
-    public boolean isWorking() {
+    public boolean getWorking() {
         return working;
     }
 

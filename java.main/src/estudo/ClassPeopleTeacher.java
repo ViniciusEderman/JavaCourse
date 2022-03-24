@@ -4,8 +4,9 @@ public class ClassPeopleTeacher extends ClassPeople {
     private double salary;
     private String specialty;
 
-    public void upSalary() {
-        // salary alteração 
+    public void upSalary(float UpSl) {
+        this.salary += UpSl;
+        
     }
 
     public String getSpecialty() {

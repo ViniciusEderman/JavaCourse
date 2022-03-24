@@ -5,7 +5,8 @@ public class ClassPeopleStudent extends ClassPeople {
     private String course;
 
     public void cancellCourse(){
-    
+        System.out.println("Matrícula será cancelada");
+
     }
 
     public String getCourse() {

@@ -6,19 +6,19 @@ public class ClassPeople {
     private String name; 
     private String sex;     
     private int yearsOld;
-    private int CPF;
+    private double CPF;
 
 //  Metódos 
-
+    
     public void doHappy() {
         this.yearsOld ++;   
     }
 
-    public int getCPF() {
+    public double getCPF() {
         return CPF;
     }
 
-    public void setCPF(int cPF) {
+    public void setCPF(double cPF) {
         this.CPF = cPF;
     }
 
@@ -44,5 +44,10 @@ public class ClassPeople {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassPeople [CPF=" + CPF + ", name=" + name + ", sex=" + sex + ", yearsOld=" + yearsOld + "]";
     }
 }
