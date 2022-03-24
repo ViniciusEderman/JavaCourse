@@ -7,14 +7,7 @@ public class ClassFight {
     private int rounds; 
     private boolean aprovado; 
     
-    public void marcarLuta() {
-
-    }
-
-    public void luta() {
-
-    }
- 
+  
     public LutadorFirstClass getDesafiado() {
         return desafiado;
     }
