@@ -13,8 +13,21 @@ public class ClassPeopleMain {
     t1.setName("Clarice Mariciano");
     e1.setName("Enjhuano Clarico");
 
-    p1.setCPF(15214987125);
+    p1.setCPF(0);
+    s2.setCPF(0);
+    t1.setCPF(0);
+    e1.setCPF(0);
 
+    p1.setSex("M");
+    s2.setSex("F");
+    t1.setSex("F");
+    e1.setSex("M");
+
+    p1.setYearsOld(25);
+    s2.setYearsOld(19);
+    t1.setYearsOld(29);
+    e1.setYearsOld(33);
+    
     System.out.println(p1.toString());
     System.out.println(s2.toString());
     System.out.println(t1.toString());

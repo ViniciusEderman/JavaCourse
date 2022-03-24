@@ -6,7 +6,7 @@ public class ClassPeople {
     private String name; 
     private String sex;     
     private int yearsOld;
-    private double CPF;
+    private int CPF;
 
 //  Metódos 
     
@@ -14,11 +14,11 @@ public class ClassPeople {
         this.yearsOld ++;   
     }
 
-    public double getCPF() {
+    public int getCPF() {
         return CPF;
     }
 
-    public void setCPF(double cPF) {
+    public void setCPF(int cPF) {
         this.CPF = cPF;
     }
 
