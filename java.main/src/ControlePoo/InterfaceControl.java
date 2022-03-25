@@ -1,4 +1,4 @@
-package javacursocode;
+package ControlePoo;
 public interface InterfaceControl {
     public abstract void ligar();
     public abstract void desligar();

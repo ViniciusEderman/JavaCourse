@@ -1,4 +1,4 @@
-package javacursocode;
+package ControlePoo;
 public class ControlRemot implements InterfaceControl {
     // atributes    
     private int volm;

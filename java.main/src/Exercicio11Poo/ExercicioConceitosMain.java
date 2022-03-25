@@ -1,4 +1,4 @@
-package javacursocode;
+package Exercicio11Poo;
 
 public class ExercicioConceitosMain {
    public static void main(String [] args) {

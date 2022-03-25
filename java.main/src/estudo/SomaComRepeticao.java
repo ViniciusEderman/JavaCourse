@@ -1,4 +1,4 @@
-package javacursocode;
+package estudo;
 import java.util.Scanner;
 
 public class SomaComRepeticao {

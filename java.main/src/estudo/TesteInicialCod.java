@@ -1,4 +1,4 @@
-package javacursocode;
+package estudo;
 
 public class TesteInicialCod {
     public static void main(String[] agrs) {
