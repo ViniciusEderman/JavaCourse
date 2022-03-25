@@ -1,4 +1,4 @@
-package estudo;
+package NewExercise;
 
 public class ClassPeople {
 // Atributos    

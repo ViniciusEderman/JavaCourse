@@ -1,4 +1,4 @@
-package javacursocode;
+package BancoFolderExercise;
 
 public class BancoMain {
     public static void main(String[] agrs){

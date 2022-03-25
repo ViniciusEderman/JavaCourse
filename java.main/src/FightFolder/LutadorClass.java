@@ -1,4 +1,4 @@
-package estudo;
+package FightFolder;
 
 public class LutadorClass {
     public static void main(String[] args) {

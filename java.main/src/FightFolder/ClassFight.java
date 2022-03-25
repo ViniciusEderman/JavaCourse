@@ -1,4 +1,4 @@
-package estudo;
+package FightFolder;
 import java.util.Random;
 
 public class ClassFight {

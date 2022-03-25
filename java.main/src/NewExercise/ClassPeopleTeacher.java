@@ -1,4 +1,4 @@
-package estudo;
+package NewExercise;
 
 public class ClassPeopleTeacher extends ClassPeople {
     private double salary;

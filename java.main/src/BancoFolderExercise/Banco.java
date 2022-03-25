@@ -1,4 +1,4 @@
-package javacursocode;
+package BancoFolderExercise;
 
 class Banco {
     // Atributos criado para o banco //

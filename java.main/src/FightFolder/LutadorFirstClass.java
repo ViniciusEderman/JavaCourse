@@ -1,4 +1,4 @@
-package estudo;
+package FightFolder;
 
 public class LutadorFirstClass {
     // ATRIBUTES 
