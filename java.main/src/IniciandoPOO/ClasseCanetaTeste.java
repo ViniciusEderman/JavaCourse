@@ -1,4 +1,4 @@
-package estudo;
+package IniciandoPOO;
 
 public class ClasseCanetaTeste {
     public static void main (String[] args) {

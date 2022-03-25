@@ -1,4 +1,4 @@
-package estudo;
+package IniciandoPOO;
 
 public class ClasseEmJava {
     

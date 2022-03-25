@@ -1,4 +1,4 @@
-package estudo;
+package IphoneConstructWithPoo;
 
 public class NewClassCourse {
     public static void main (String[] args) {

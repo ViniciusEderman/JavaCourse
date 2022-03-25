@@ -1,4 +1,4 @@
-package estudo;
+package IphoneConstructWithPoo;
 
 public class Iphone {
     String modeloFabricado;
