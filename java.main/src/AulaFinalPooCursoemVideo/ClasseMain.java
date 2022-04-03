@@ -11,5 +11,11 @@ public class ClasseMain {
         x[0] = new Vizualizador("Vinicius Luiz", 25, "Male", "viniciusLuiz122");
         x[1] = new Vizualizador("Carlito Nhoque", 32, "Male", "acessaradm");
         x[2] = new Vizualizador("Emanuel Campos", 55, "Male", "acessadm");
+
+        Visualizacao v1 = new Visualizacao(x[0], v[1]);
+        System.out.println(v1.toString());
+
+        
     }
+
 }
