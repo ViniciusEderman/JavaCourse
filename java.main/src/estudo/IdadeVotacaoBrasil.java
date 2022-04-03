@@ -1,4 +1,4 @@
-package estudo;
+package Estudo;
 import java.util.Scanner;
 
 public class IdadeVotacaoBrasil {
