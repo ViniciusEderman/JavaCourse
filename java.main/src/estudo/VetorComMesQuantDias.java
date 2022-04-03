@@ -1,4 +1,4 @@
-package estudo;
+package Estudo;
 
 public class VetorComMesQuantDias {
     public static void main(String[] args) {
