@@ -29,9 +29,9 @@ public class ExerciseClass24 {
         }
     } while(x != 0);
         media = soma/total;
-        System.out.println("Resultado: " + "Total de valores: "+ total
-        + "Total de pares: "+par+ "Total de ímpares: "+impar+ "Acima de 100: "+acimaDeCem+
-                "Soma dos valores: " + soma + "Média dos valores: " +media);
+        System.out.println("Resultado: " + "Total de valores: "+ total 
+            + "Total de pares: "+ par + "Total de ímpares: "+ impar + "Acima de 100: "+ acimaDeCem +
+                "Soma dos valores: " + soma + "Média dos valores: " + media);
     objeto.close();
    } 
 }
