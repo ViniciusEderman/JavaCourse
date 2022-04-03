@@ -1,4 +1,4 @@
-package Estudo;
+package estudo;
 import java.util.Scanner;
 
 public class CalculoDelta {

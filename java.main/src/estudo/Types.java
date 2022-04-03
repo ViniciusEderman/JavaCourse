@@ -1,4 +1,4 @@
-package Estudo;
+package estudo;
 
 // conteúdo para lembrar conceitos básicos da linguagem 
 public class Types {
