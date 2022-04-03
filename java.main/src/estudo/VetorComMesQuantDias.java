@@ -6,7 +6,7 @@ public class VetorComMesQuantDias {
         int dias [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         
         for(int cont = 0; cont< mes.length; cont++) {
-            System.out.println("No mês de " + mes[cont] + " tem " + 
+            System.out.println("O mês de " + mes[cont] + " tem " + 
             dias[cont] + " dias ao total.");
         }
     }
