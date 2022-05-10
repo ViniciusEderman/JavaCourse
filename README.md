@@ -1,2 +1,1 @@
-# Será construído em outro momento.
- 
+# Aqui você encontrará apenas uma estrutura de estudo da linguagem Java
