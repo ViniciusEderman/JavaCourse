@@ -9,8 +9,9 @@ public class DIOQuestionOne {
       
       String[] inputSplit = input.split("");
       double media = Double.parseDouble(inputSplit[0]) / Double.parseDouble(inputSplit[1]);
-      
-    
+        // inputSplit[0] == H
+        // inputSplit[1] == p
+
       System.out.printf("%.2f", media);
     }
 }
