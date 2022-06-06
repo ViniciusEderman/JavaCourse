@@ -1,4 +1,4 @@
-# Java beginner course / Poo java course
+# Java beginner course / Poo course
 
 # --------- HI DEV --------- 
 
