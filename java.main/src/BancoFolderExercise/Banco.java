@@ -96,7 +96,7 @@ class Banco {
         }
     }
         else {
-            System.out.println("Impossível sacar");
+            System.out.println("Impossível realizar o saque");
         }
     }
     public void pagarMensalidade() {
