@@ -4,13 +4,17 @@ import java.util.Scanner;
 public class ExerciseClass24 {
    public static void main (String[] args){
    Scanner objeto = new Scanner(System.in);
-   float x, soma;
+
+   //declaração de var:
+   float x, soma, par, impar, total, acimaDeCem, media;
+   
+   // atribuiçao de valor:
    soma = 0;
-   float par = -1;
-   float impar = 0;
-   float total = 0;
-   float acimaDeCem = 0;
-   float media = 0;
+   par = -1;
+   impar = 0;
+   total = 0;
+   acimaDeCem = 0;
+   media = 0;
 
     do {
         System.out.println("Digite o número (0 encerra o programa): ");
