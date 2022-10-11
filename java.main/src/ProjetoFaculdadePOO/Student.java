@@ -6,7 +6,7 @@ class Student {
         //declaracao de variavel media, que irá receber as notas a partir dos if's encadeados de verificacao
         float media;
 
-        // criando o objeto para entrada de dados
+        // instanciando o objeto keyboard
         Scanner keyboard = new Scanner(System.in);
 
         /*bloco de criacao das variaveis nome, disciplina, notas(1,2 e 3) 
@@ -31,7 +31,7 @@ class Student {
         media = 0;
 
         //Bloco de verificacao de quais notas entrarao na media
-        if(nota1 >= nota2 && nota2 > nota3) {
+        if(nota1 >= nota2 && nota2 > nota3 || nota2 > nota1) {
             media = (nota1 + nota2)/2;
         }
         if(nota2 > nota1 && nota3 > nota1) {
@@ -41,15 +41,17 @@ class Student {
             media = (nota1 + nota3)/2;
         }
 
+        //System.out.println(media);
+
         //bloco de verificacao de media
         if(media >= 6) {
-            System.out.println("O aluno "+nome+ " foi aprovado "+ "na disciplina: "+disciplina+ "a média do aluno foi: " +media);
+            System.out.println("O aluno "+nome+ " foi aprovado "+ "na disciplina:\n "+disciplina+"\n" + "a média do aluno foi:\n " +media);
         }
         if(media >= 4 && nota3 == 0) {
-            System.out.println("O aluno "+nome+ "está de recuperação "+"na disciplina: "+disciplina+ "a média do aluno foi:" +media);
+            System.out.println("O aluno "+nome+ "está de recuperação "+"na disciplina:\n "+disciplina+"\n" + "a média do aluno foi:\n" +media);
         }
         if(media < 6) {
-            System.out.println("O aluno "+nome+ "foi reprovado "+"na disciplina: "+disciplina+ "a média do aluno foi:" +media);
+            System.out.println("O aluno "+nome+ " foi reprovado "+"na disciplina:\n "+disciplina+"\n" + "A média do aluno foi:\n" +media);
         }
         keyboard.close();
     }
