@@ -34,7 +34,7 @@ class Student {
         if(nota1 >= nota2 && nota2 > nota3) {
             media = (nota1 + nota2)/2;
         }
-        if(nota1 < nota2 && nota2 <= nota3) {
+        if(nota2 > nota1 && nota3 > nota1) {
             media = (nota2 + nota3)/2;
         }
         if(nota1 > nota2 && nota3 > nota2) {
@@ -43,13 +43,13 @@ class Student {
 
         //bloco de verificacao de media
         if(media >= 6) {
-            System.out.println("O aluno "+nome+ " foi aprovado "+ "na disciplina: "+disciplina);
+            System.out.println("O aluno "+nome+ " foi aprovado "+ "na disciplina: "+disciplina+ "a média do aluno foi: " +media);
         }
-        if(media < 6 && media >= 4 || nota3 == 0) {
-            System.out.println("O aluno "+nome+ " está de recuperação "+"na disciplina: "+disciplina);
+        if(media >= 4 && nota3 == 0) {
+            System.out.println("O aluno "+nome+ "está de recuperação "+"na disciplina: "+disciplina+ "a média do aluno foi:" +media);
         }
         if(media < 6) {
-            System.out.println("O aluno "+nome+ " foi reprovado "+"na disciplina: "+disciplina);
+            System.out.println("O aluno "+nome+ "foi reprovado "+"na disciplina: "+disciplina+ "a média do aluno foi:" +media);
         }
         keyboard.close();
     }
