@@ -2,12 +2,11 @@ package ProjetoFaculdadePOO;
 import java.util.Scanner;
 
 class Aluno {
-
-    //atributes(variaveis usadas no construtor) 
+ 
     private String nome, situacao;
     private float nota1, nota2, nota3, media;
     
-
+    //construtor:
     public Aluno(String nome, float nota1, float nota2, float nota3, String situacao) {
         // situacao == aprovado, reprovado e de recuperacao
         this.nome = nome;
@@ -17,11 +16,12 @@ class Aluno {
         this.situacao = situacao;
     }
 
-    private Aluno(String disciplina) {
-        disciplina = "matemática";
-        System.out.println(disciplina);
+    // sobrecarga do construtor aluno
+    private Aluno() {
+        System.out.println("Matemática");
     }
 
+    //metódo para inserir alunos no array
     static void setInserirAluno() {
 
         Scanner entrada = new Scanner(System.in);
