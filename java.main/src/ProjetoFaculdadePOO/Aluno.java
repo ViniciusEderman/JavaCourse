@@ -7,6 +7,7 @@ class Aluno {
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     ArrayList<String> aluno = new ArrayList<>();
+    Scanner entrada = new Scanner(System.in);
     
     //construtor:
     public Aluno(float nota1, float nota2) {
@@ -28,7 +29,6 @@ class Aluno {
     //metódo para inserir alunos no array
     public void setInserirAluno() {
 
-        Scanner entrada = new Scanner(System.in);
         
         //insere alunos
         for(int i = 0; i < 3; i++) {
@@ -40,16 +40,15 @@ class Aluno {
         
         //printa o aluno
         System.out.println(aluno);
-        entrada.close();
+       
     }
 
     //metodo responsável por apresentar o Aluno
     public void apresentarAluno() {
-        Scanner entrada = new Scanner(System.in);
-        int numeroDigitado = entrada.nextInt();
-
+        
         System.out.println("Digite um comando: 0 para o primeiro aluno, 1 para o segundo aluno e 2 para o terceiro");
-
+        int numeroDigitado = entrada.nextInt();
+        
         if(numeroDigitado == 0) {
             System.out.println("O aluno: " + aluno.get(0)+ " participante da disciplina: " + this.disciplina + "o aluno está atualmente: " + this.situacao);
         }
@@ -63,7 +62,6 @@ class Aluno {
             System.out.println("O aluno não existe em nosso sistema");
         }
         
-        entrada.close();
     }
 
     public void buscarAluno() {
@@ -102,5 +100,6 @@ class Aluno {
             situacao = "reprovado";
           //  System.out.println(situacao);
         }
+
     }
 }
