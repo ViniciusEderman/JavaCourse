@@ -18,14 +18,13 @@ class Aluno {
 
     // sobrecarga do construtor aluno
     public Aluno(String disciplina) {
-        
+
         this.disciplina = disciplina;
-        this.disciplina = "Matemática";
     }
 
     //metodo responsável por apresentar o Aluno
     public void apresentarAluno() {
-        System.out.println("O aluno: " + nome + " participante da disciplina: " + disciplina);
+        System.out.println("O aluno: " + this.nome + " participante da disciplina: " + this.disciplina);
     }
 
     //metódo para inserir alunos no array
@@ -46,56 +45,35 @@ class Aluno {
         for(int i = 0; i < 3; i++) {
             System.out.println(arrayAluno[i]);
         }
-        
         entrada.close();
     }
     
-    public static void main (String [] args) {
-        //declaracao de variavel media, que irá receber as notas a partir dos if's encadeados de verificacao
-        float media = 0;
-        
-        // instanciando o objeto keyboard
-        Scanner keyboard = new Scanner(System.in);
+    //metodo de verificarNota
+    public void verificarNota() {
 
-        /*bloco de criacao das variaveis nome, disciplina, notas(1,2 e 3) 
-        Aqui e mostrado um print e dps o valor sera armazenado nas variaveis utilizando o objeto keyboard 
-        */
-        System.out.println("Digite o nome do aluno: ");
-        String nome = keyboard.nextLine();
-
-        System.out.println("Digite o nome da disciplina: ");
-        String disciplina = keyboard.nextLine();
-
-        System.out.print("Digite a nota1 do aluno: ");
-        float nota1 = keyboard.nextFloat();
-
-        System.out.print("Digite a nota2 do aluno: ");
-        float nota2 = keyboard.nextFloat();
-
-        System.out.print("Digite a nota3 do aluno: ");
-        float nota3 = keyboard.nextFloat();
-        
         //Bloco de verificacao de quais notas entrarao na media
-        if(nota1 >= nota2 && nota2 > nota3 || nota2 > nota1) {
-            media = (nota1 + nota2)/2;
+        if(this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 > this.nota1) {
+            media = (this.nota1 + this.nota2)/2;
         }
-        if(nota2 > nota1 && nota3 > nota1) {
-            media = (nota2 + nota3)/2;
+        if(this.nota2 > this.nota1 && this.nota3 > this.nota1) {
+            media = (this.nota2 + this.nota3)/2;
         }
-        if(nota1 > nota2 && nota3 > nota2) {
-            media = (nota1 + nota3)/2;
+        if(this.nota1 > this.nota2 && this.nota3 > this.nota2) {
+            media = (this.nota1 + this.nota3)/2;
         }
 
-        //bloco de verificacao de media
+        //bloco de verificacao de media:
         if(media >= 6) {
-            System.out.println("O aluno "+nome+ " foi aprovado "+ "na disciplina:\n "+disciplina+"\n" + "a média do aluno foi:\n " +media);
+            this.situacao = "aprovado";
+            System.out.println(situacao);
         }
         if(media >= 4 && nota3 == 0) {
-            System.out.println("O aluno "+nome+ "está de recuperação "+"na disciplina:\n "+disciplina+"\n" + "a média do aluno foi:\n" +media);
+            this.situacao = "recuperação";
+            System.out.println(situacao);
         }
         if(media < 6) {
-            System.out.println("O aluno "+nome+ " foi reprovado "+"na disciplina:\n "+disciplina+"\n" + "A média do aluno foi:\n" +media);
+            this.situacao = "reprovado";
+            System.out.println(situacao);
         }
-        keyboard.close();
     }
 }
