@@ -6,7 +6,7 @@ class Aluno {
     //variables:
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
-    ArrayList aluno = new ArrayList<>();
+    ArrayList<String> aluno = new ArrayList<>();
     
     //construtor:
     public Aluno(float nota1, float nota2) {
@@ -30,7 +30,6 @@ class Aluno {
 
         Scanner entrada = new Scanner(System.in);
         
-
         //insere alunos
         for(int i = 0; i < 3; i++) {
             
@@ -44,11 +43,36 @@ class Aluno {
         entrada.close();
     }
 
-
     //metodo responsável por apresentar o Aluno
     public void apresentarAluno() {
+        Scanner entrada = new Scanner(System.in);
+        int numeroDigitado = entrada.nextInt();
+
+        System.out.println("Digite um comando: 0 para o primeiro aluno, 1 para o segundo aluno e 2 para o terceiro");
+
+        if(numeroDigitado == 0) {
+            System.out.println("O aluno: " + aluno.get(0)+ " participante da disciplina: " + this.disciplina + "o aluno está atualmente: " + this.situacao);
+        }
+        else if(numeroDigitado == 1) {
+            System.out.println("O aluno: " + aluno.get(1)+ " participante da disciplina: " + this.disciplina + "o aluno está atualmente: " + this.situacao);
+        }
+        else if(numeroDigitado == 2) {
+            System.out.println("O aluno: " + aluno.get(2)+ " participante da disciplina: " + this.disciplina + "o aluno está atualmente: " + this.situacao);
+        }
+        else {
+            System.out.println("O aluno não existe em nosso sistema");
+        }
         
-       System.out.println("O aluno: " + aluno.get(0) + " participante da disciplina: " + this.disciplina + "o aluno está atualmente: " + this.situacao);
+        entrada.close();
+    }
+
+    public void buscarAluno() {
+    
+        System.out.println("Digite o nome do aluno: ");    
+
+        for (int i = 0; i < aluno.size(); i++) {
+            System.out.println(aluno.get(i));
+          }
     }
 
     //metodo de verificarNota
