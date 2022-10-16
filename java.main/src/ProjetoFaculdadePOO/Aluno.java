@@ -17,9 +17,8 @@ class Aluno {
         this.situacao = situacao;
     }
 
-    private Aluno(String disciplina) {
-        disciplina = "matemática";
-        System.out.println(disciplina);
+    public Aluno() {
+        System.out.println("Diciplina = Matemática");
     }
 
     static void setInserirAluno() {
