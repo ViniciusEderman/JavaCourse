@@ -2,8 +2,8 @@ package ProjetoFaculdadePOO;
 import java.util.Scanner;
 
 class Aluno {
- 
-    private String nome, situacao;
+    //variables:
+    private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     
     //construtor:
@@ -17,15 +17,15 @@ class Aluno {
     }
 
     // sobrecarga do construtor aluno
-    public Aluno() {
-        String disciplina = "Matemática";
-        System.out.println("Diciplina: " + disciplina);
+    public Aluno(String disciplina) {
+        
+        this.disciplina = disciplina;
+        this.disciplina = "Matemática";
     }
 
+    //metodo responsável por apresentar o Aluno
     public void apresentarAluno() {
-
-        Aluno disciplina = new Aluno();
-        System.out.println("O aluno:" + nome + "participante da disciplina:" + disciplina);
+        System.out.println("O aluno: " + nome + " participante da disciplina: " + disciplina);
     }
 
     //metódo para inserir alunos no array
@@ -35,12 +35,14 @@ class Aluno {
 
         String arrayAluno[] = new String[3];
 
+        //insere alunos
         for(int i = 0; i < 3; i++) {
 
             System.out.println("Digite o nome do aluno: ");
             arrayAluno[i] = entrada.nextLine();
         }
 
+        //printa o aluno
         for(int i = 0; i < 3; i++) {
             System.out.println(arrayAluno[i]);
         }
@@ -50,10 +52,8 @@ class Aluno {
     
     public static void main (String [] args) {
         //declaracao de variavel media, que irá receber as notas a partir dos if's encadeados de verificacao
-        float media;
-        //iniciando valor da variavel para rodar o codigo
-        media = 0; 
-
+        float media = 0;
+        
         // instanciando o objeto keyboard
         Scanner keyboard = new Scanner(System.in);
 
