@@ -17,8 +17,8 @@ class Aluno {
     }
 
     // sobrecarga do construtor aluno
-    private Aluno() {
-        System.out.println("Matemática");
+    prublic Aluno() {
+        System.out.println("Diciplina: Matemática");
     }
 
     //metódo para inserir alunos no array
