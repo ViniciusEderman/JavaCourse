@@ -17,24 +17,31 @@ class Aluno {
     }
 
     // sobrecarga do construtor aluno
-    prublic Aluno() {
-        System.out.println("Diciplina: Matemática");
+    public Aluno() {
+        String disciplina = "Matemática";
+        System.out.println("Diciplina: " + disciplina);
+    }
+
+    public void apresentarAluno() {
+
+        Aluno disciplina = new Aluno();
+        System.out.println("O aluno:" + nome + "participante da disciplina:" + disciplina);
     }
 
     //metódo para inserir alunos no array
-    static void setInserirAluno() {
+    public void setInserirAluno() {
 
         Scanner entrada = new Scanner(System.in);
 
-        String arrayAluno[] = new String[10];
+        String arrayAluno[] = new String[3];
 
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 3; i++) {
 
             System.out.println("Digite o nome do aluno: ");
             arrayAluno[i] = entrada.nextLine();
         }
 
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 3; i++) {
             System.out.println(arrayAluno[i]);
         }
         
@@ -44,6 +51,8 @@ class Aluno {
     public static void main (String [] args) {
         //declaracao de variavel media, que irá receber as notas a partir dos if's encadeados de verificacao
         float media;
+        //iniciando valor da variavel para rodar o codigo
+        media = 0; 
 
         // instanciando o objeto keyboard
         Scanner keyboard = new Scanner(System.in);
@@ -65,10 +74,7 @@ class Aluno {
 
         System.out.print("Digite a nota3 do aluno: ");
         float nota3 = keyboard.nextFloat();
-
-        //iniciando valor da variavel para rodar o codigo
-        media = 0;
-
+        
         //Bloco de verificacao de quais notas entrarao na media
         if(nota1 >= nota2 && nota2 > nota3 || nota2 > nota1) {
             media = (nota1 + nota2)/2;
@@ -79,8 +85,6 @@ class Aluno {
         if(nota1 > nota2 && nota3 > nota2) {
             media = (nota1 + nota3)/2;
         }
-
-        //System.out.println(media);
 
         //bloco de verificacao de media
         if(media >= 6) {
