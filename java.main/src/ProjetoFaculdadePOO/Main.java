@@ -8,5 +8,6 @@ public class Main {
         c.setInserirAluno();
         c.verificarNota();
         c.apresentarAluno();
+        c.remover();
     }
 }

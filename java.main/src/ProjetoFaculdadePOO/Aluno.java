@@ -7,6 +7,7 @@ class Aluno {
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     ArrayList<String> aluno = new ArrayList<>();
+    ArrayList<Float> notas = new ArrayList<>();
     Scanner entrada = new Scanner(System.in);
     
     //construtor:
@@ -42,6 +43,21 @@ class Aluno {
         System.out.println(aluno);
        
     }
+
+    public void remover() { 
+        
+        for(int i = 0; i < aluno.size(); i++){
+            System.out.println((i + 1) + "" + aluno.get(i));
+        }
+        System.out.println("Selecione um número para Remover: ");
+        int op = entrada.nextInt();
+        if(op == 1){
+            aluno.remove(op - 1);
+        } else if (op <= aluno.size()){
+            aluno.remove(op);
+            System.out.println("Aluno Removido");
+            }
+    	}
 
     //metodo responsável por apresentar o Aluno
     public void apresentarAluno() {
