@@ -47,13 +47,16 @@ class Aluno {
     public void remover() { 
         
         for(int i = 0; i < aluno.size(); i++){
-            System.out.println((i + 1) + "" + aluno.get(i));
+            System.out.println((i + 1) + " " + aluno.get(i));
         }
         System.out.println("Selecione um número para Remover: ");
         int op = entrada.nextInt();
+       
         if(op == 1){
             aluno.remove(op - 1);
-        } else if (op <= aluno.size()){
+            System.out.println("Aluno Removido");
+        } 
+        else if (op <= aluno.size()){
             aluno.remove(op);
             System.out.println("Aluno Removido");
             }
