@@ -9,8 +9,10 @@ class Aluno {
 
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
-    ArrayList<String> aluno = new ArrayList<>();
+    private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
+    private int cont = 0;
 
+    ArrayList<String> aluno = new ArrayList<>();
     ArrayList<Float> n1 = new ArrayList<>();
     ArrayList<Float> n2 = new ArrayList<>();
     ArrayList<Float> n3 = new ArrayList<>();
@@ -35,6 +37,8 @@ class Aluno {
     // metódo para inserir alunos no array
     public void setInserirAluno() {
 
+        System.out.println("=====================================");
+
         // insere alunos
         System.out.println("Digite o nome do aluno: ");
         this.nome = entrada.nextLine();
@@ -45,6 +49,8 @@ class Aluno {
     }
 
     public void remover() {
+
+        System.out.println("=====================================");
 
         for (int i = 0; i < aluno.size(); i++) {
             System.out.println((i + 1) + "-" + aluno.get(i));
@@ -74,6 +80,8 @@ class Aluno {
 
     public void setInserirNota() {
 
+        System.out.println("=====================================");
+
         System.out.println("Digite a nota da N1: ");
         nota1 = entrada.nextInt();
 
@@ -91,6 +99,7 @@ class Aluno {
     // metodo de verificarNota
     public void verificarNota() {
 
+        System.out.println("=====================================");
         // Bloco de verificacao de quais notas entrarao na media
         if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 > this.nota1) {
             media = (this.nota1 + this.nota2) / 2;
@@ -112,6 +121,9 @@ class Aluno {
             // System.out.println(situacao);
         }
 
+        cont++;
+        mediaTotal += media;
+
         m.add(media);
     }
 
@@ -123,5 +135,55 @@ class Aluno {
             System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
                     + n3.get(i) + "   |   " + m.get(i) + "   |   " + situacao);
         }
+        System.out.println("=====================================");
+    }
+
+    public void CompararNotas(){
+
+        
+        for(int  i = 0; i < aluno.size();i++){
+            
+            if( n1.get(i) > maior1){
+                maior1 = n1.get(i);
+            }
+
+            if(n2.get(i) > maior2){
+                maior2 = n2.get(i);
+            }
+
+            if(n3.get(i) > maior3){
+                maior3 = n3.get(i);
+            }             
+            
+            if(m.get(i) > maiorM){
+                maiorM = m.get(i);
+            }
+        }
+    }
+
+
+    public void ResumoGeral(){
+        CompararNotas();
+        System.out.println("=====================================");
+        System.out.println("Nome da Disciplina: " + disciplina);
+        System.out.println("Total de Alunos: " + aluno.size());
+        System.out.println("Media Geral: " + (mediaTotal/cont));
+       
+        System.out.println("Maior Nota 1: " + maior1);
+        System.out.println("\tAluno: " + aluno.get(n1.indexOf(maior1)));
+        System.out.println("\tMédia: " + m.get(n1.indexOf(maior1)));
+       
+        System.out.println("Maior Nota 2: " + maior2);
+        System.out.println("\tAluno: " + aluno.get(n2.indexOf(maior2)));
+        System.out.println("\tMédia: " + m.get(n2.indexOf(maior2)));
+       
+        System.out.println("Maior Nota 3: " + maior3);
+        System.out.println("\tAluno: " + aluno.get(n3.indexOf(maior3)));
+        System.out.println("\tMédia: " + m.get(n3.indexOf(maior3)));
+       
+        System.out.println("Maior Média: " + maiorM);
+        System.out.println("\tAluno: " + aluno.get(m.indexOf(maiorM)));
+        System.out.println("\tMédia: " + m.get(m.indexOf(maiorM)));
+        System.out.println("=====================================");
     }
 }

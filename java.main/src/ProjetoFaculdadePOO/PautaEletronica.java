@@ -21,7 +21,7 @@ public class PautaEletronica {
             System.out.println("    | 6 - INFORMACOES DISCIPLINA    |");
             System.out.println("    | 0 - SAIR                      |");
             System.out.println("    =================================");
-            System.out.print("Digite a opção desejada: ");
+            System.out.print("   Digite a opção desejada: ");
             op = entrada.nextInt();
             Interacao();
         } while(op != 0);
@@ -59,7 +59,7 @@ public class PautaEletronica {
             aluno.Resumo();
         }
         else if(op == 6){
-
+            aluno.ResumoGeral();
         }
 
 
