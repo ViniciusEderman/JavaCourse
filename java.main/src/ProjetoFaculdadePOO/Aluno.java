@@ -74,7 +74,7 @@ class Aluno {
         nome = entrada.nextLine();
         for(int i = 0; i < aluno.size(); i++){
             if(aluno.get(i).equalsIgnoreCase(nome)){
-                System.out.println("Aluno encontrado: " + aluno.indexOf(nome));
+                System.out.println("Aluno encontrado: " + nome);
             }
         }     
         }
