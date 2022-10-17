@@ -3,11 +3,8 @@ package ProjetoFaculdadePOO;
 public class Main {
     public static void main (String [] args) {
     
-        Aluno c = new Aluno(10, 8);
+        PautaEletronica teste = new PautaEletronica();
 
-        c.setInserirAluno();
-        c.verificarNota();
-        c.apresentarAluno();
-        c.remover();
+        teste.Menu();
     }
 }
