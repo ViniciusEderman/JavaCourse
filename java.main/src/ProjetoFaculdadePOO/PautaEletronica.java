@@ -46,7 +46,7 @@ public class PautaEletronica {
             aluno.setInserirAluno();
         } 
         else if(op == 2){
-
+            aluno.buscarAluno();
         }
         else if(op == 3){
             aluno.setInserirNota();

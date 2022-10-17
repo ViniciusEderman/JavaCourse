@@ -68,15 +68,17 @@ class Aluno {
         }
     }
 
-
     public void buscarAluno() {
 
         System.out.println("Digite o nome do aluno: ");
-
-        for (int i = 0; i < aluno.size(); i++) {
-            System.out.println(aluno.get(i));
+        nome = entrada.nextLine();
+        for(int i = 0; i < aluno.size(); i++){
+            if(aluno.get(i).equalsIgnoreCase(nome)){
+                System.out.println("Aluno encontrado: " + aluno.indexOf(nome));
+            }
+        }     
         }
-    }
+    
 
     public void setInserirNota() {
 
