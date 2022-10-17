@@ -37,8 +37,6 @@ class Aluno {
     // metódo para inserir alunos no array
     public void setInserirAluno() {
 
-        System.out.println("=====================================");
-
         // insere alunos
         System.out.println("Digite o nome do aluno: ");
         this.nome = entrada.nextLine();
@@ -46,12 +44,11 @@ class Aluno {
 
         // printa o aluno
         System.out.println("Aluno adicinonado com sucesso");
+        
+        
     }
 
     public void remover() {
-
-        System.out.println("=====================================");
-
         for (int i = 0; i < aluno.size(); i++) {
             System.out.println((i + 1) + "-" + aluno.get(i));
         }
@@ -66,6 +63,7 @@ class Aluno {
             aluno.remove(op - 1);
             System.out.println("Aluno Removido com sucesso");
         }
+        
     }
 
     public void buscarAluno() {
@@ -74,7 +72,12 @@ class Aluno {
         nome = entrada.nextLine();
         for(int i = 0; i < aluno.size(); i++){
             if(aluno.get(i).equalsIgnoreCase(nome)){
-                System.out.println("Aluno encontrado: " + nome);
+                System.out.println("Aluno encontrado: " + aluno.get(i));
+                System.out.println("Disciplina: " + this.disciplina);
+                System.out.println("N1: " + n1.get(aluno.indexOf(aluno.get(i))));
+                System.out.println("N2: " + n2.get(aluno.indexOf(aluno.get(i))));
+                System.out.println("N3: " + n3.get(aluno.indexOf(aluno.get(i))));
+                System.out.println("Media: " + m.get(aluno.indexOf(aluno.get(i))));
             }
         }     
         }
@@ -82,7 +85,7 @@ class Aluno {
 
     public void setInserirNota() {
 
-        System.out.println("=====================================");
+        
 
         System.out.println("Digite a nota da N1: ");
         nota1 = entrada.nextInt();
@@ -101,13 +104,15 @@ class Aluno {
     // metodo de verificarNota
     public void verificarNota() {
 
-        System.out.println("=====================================");
+        
         // Bloco de verificacao de quais notas entrarao na media
-        if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 > this.nota1) {
+        if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 >= this.nota1) {
             media = (this.nota1 + this.nota2) / 2;
-        } else if (this.nota2 > this.nota1 && this.nota3 > this.nota1) {
+        } 
+        else if (this.nota2 > this.nota1 && this.nota3 > this.nota1) {
             media = (this.nota2 + this.nota3) / 2;
-        } else if (this.nota1 > this.nota2 && this.nota3 > this.nota2) {
+        } 
+        else if (this.nota1 > this.nota2 && this.nota3 > this.nota2) {
             media = (this.nota1 + this.nota3) / 2;
         }
 
@@ -115,10 +120,12 @@ class Aluno {
         if (media >= 6) {
             situacao = "aprovado";
             // System.out.println(situacao);
-        } else if (media >= 4 && nota3 == 0) {
+        } 
+        else if (media >= 4 && nota3 == 0) {
             situacao = "recuperação";
             // System.out.println(situacao);
-        } else if (media < 6) {
+        } 
+        else if (media < 6) {
             situacao = "reprovado";
             // System.out.println(situacao);
         }
@@ -130,14 +137,14 @@ class Aluno {
     }
 
     public void Resumo() {
-        System.out.println("=====================================");
+        
         System.out.println("Resumo dos alunos: ");
         System.out.println("ID   |   NOME   |   N1   |   N2   |  N3   |   MÉDIA   |   SITUAÇÃO   ");
         for (int i = 0; i < aluno.size(); i++) {
             System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
                     + n3.get(i) + "   |   " + m.get(i) + "   |   " + situacao);
         }
-        System.out.println("=====================================");
+        
     }
 
     public void CompararNotas(){
@@ -166,7 +173,7 @@ class Aluno {
 
     public void ResumoGeral(){
         CompararNotas();
-        System.out.println("=====================================");
+        
         System.out.println("Nome da Disciplina: " + disciplina);
         System.out.println("Total de Alunos: " + aluno.size());
         System.out.println("Media Geral: " + (mediaTotal/cont));
@@ -186,6 +193,5 @@ class Aluno {
         System.out.println("Maior Média: " + maiorM);
         System.out.println("\tAluno: " + aluno.get(m.indexOf(maiorM)));
         System.out.println("\tMédia: " + m.get(m.indexOf(maiorM)));
-        System.out.println("=====================================");
     }
 }

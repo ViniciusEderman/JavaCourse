@@ -12,7 +12,7 @@ public class PautaEletronica {
         do{ 
             System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
 
-            System.out.println("    =================================");
+            System.out.println("=====================================");
             System.out.println("    | 1 - INSERIR ALUNO             |");
             System.out.println("    | 2 - PESQUISAR ALUNO           |");
             System.out.println("    | 3 - INSERIR NOTAS             |");
@@ -20,28 +20,18 @@ public class PautaEletronica {
             System.out.println("    | 5 - RELATORIO ALUNOS          |");
             System.out.println("    | 6 - INFORMACOES DISCIPLINA    |");
             System.out.println("    | 0 - SAIR                      |");
-            System.out.println("    =================================");
+            System.out.println("=====================================");
             System.out.print("   Digite a opção desejada: ");
             op = entrada.nextInt();
             Interacao();
         } while(op != 0);
-            
-        // chamar o metodo construtor == inserir aluno
-
-        // chamar o metodo get == search study
-
-        // chamar o metodo set == inserir nota
-
-        // chamar o metodo set == excluir aluno
-
-        // chamar um get == apresentacao
-
-        // informação da disciplina == getter (big gett)
+        
     System.out.println("Saindo do sistema....");
     }
 
     public void Interacao(){
         
+        System.out.println("=====================================");
         if (op == 1){
             aluno.setInserirAluno();
         } 
@@ -61,6 +51,7 @@ public class PautaEletronica {
         else if(op == 6){
             aluno.ResumoGeral();
         }
+        System.out.println("=====================================");
 
 
     }
