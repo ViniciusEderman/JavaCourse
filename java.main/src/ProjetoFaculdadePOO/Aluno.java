@@ -126,7 +126,7 @@ class Aluno {
     public void verificarNota() {
 
         // Bloco de verificacao de quais notas entrarao na media
-        if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 >= this.nota1) {
+        if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 >= this.nota1 && this.nota1 > this.nota3) {
             media = (this.nota1 + this.nota2) / 2;
         } else if (this.nota2 > this.nota1 && this.nota3 > this.nota1) {
             media = (this.nota2 + this.nota3) / 2;
