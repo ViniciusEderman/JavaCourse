@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Aluno {
-    // variables:
     Scanner entrada = new Scanner(System.in);
-
+    
+    // variables:
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
     private int cont = 0;
 
+    //utilizando Arraylist para adicionar dados
     ArrayList<String> aluno = new ArrayList<>();
     ArrayList<Float> n1 = new ArrayList<>();
     ArrayList<Float> n2 = new ArrayList<>();
@@ -47,7 +48,10 @@ class Aluno {
 
     }
 
+    //metodo para remover alunos
     public void remover() {
+
+        //remover dados de um aluno
         for (int i = 0; i < aluno.size(); i++) {
             System.out.println((i + 1) + "-" + aluno.get(i));
         }
@@ -82,8 +86,10 @@ class Aluno {
 
     }
 
+    //metodo para buscar aluno
     public void buscarAluno() {
 
+        //buscando aluno atráves do nome
         System.out.println("Digite o nome do aluno: ");
         nome = entrada.nextLine();
         for (int i = 0; i < aluno.size(); i++) {
@@ -98,8 +104,10 @@ class Aluno {
         }
     }
 
+    //Metodo para inserir Nota
     public void setInserirNota() {
-
+        
+        //Adicionando nota
         System.out.println("Digite a nota da N1: ");
         nota1 = entrada.nextInt();
 
@@ -144,6 +152,7 @@ class Aluno {
         m.add(media);
     }
 
+    //metodo para lista de alunos
     public void Resumo() {
 
         System.out.println("Resumo dos alunos: ");
@@ -156,8 +165,10 @@ class Aluno {
 
     }
 
+    //metodo para saber o maior valor
     public void CompararNotas() {
-
+         
+        //calculo da maior media
         for (int i = 0; i < aluno.size(); i++) {
 
             if (n1.get(i) > maior1) {
@@ -178,6 +189,7 @@ class Aluno {
         }
     }
 
+    //metodo para Relatorio de alunos
     public void ResumoGeral() {
         CompararNotas();
 

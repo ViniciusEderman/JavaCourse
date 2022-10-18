@@ -7,6 +7,7 @@ public class PautaEletronica {
 
     private int op;
 
+    // metodo para um menu interativo
     public void Menu() {
             
         do{ 
@@ -29,6 +30,7 @@ public class PautaEletronica {
     System.out.println("Saindo do sistema....");
     }
 
+    //metodo para interação do objeto
     public void Interacao(){
         
         System.out.println("=====================================");
