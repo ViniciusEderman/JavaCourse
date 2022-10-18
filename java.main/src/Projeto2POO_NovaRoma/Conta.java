@@ -57,6 +57,7 @@ public class Conta {
     // metodo para criar a conta
     public void abrirConta(String t) {
         this.settipoConta(t);
+        this.setstatusConta(true);
          if (t == "CC") {
              this.setsaldoConta(10.00f); // se o user criar uma conta do tipo corrente ele já irá receber um valor de 10.00
          }
@@ -70,7 +71,9 @@ public class Conta {
     public void depositar(float v) {
         if (statusConta == true) {
             saldoConta += v;
-            System.out.println("Depósito realizado com sucesso!");
+            saldoConta -= 0.10f;
+            System.out.println("\nDepósito realizado com sucesso!");
+            System.out.printf("Saldo atual: R$ %.2f\n\n", saldoConta);
         }
         else {
             System.out.println("Conta fechada, não é possível depositar");
@@ -82,7 +85,8 @@ public class Conta {
         if (statusConta = true) {
           if(saldoConta >= v) {
               saldoConta = saldoConta - v; 
-                System.out.println("Saque realizado com sucesso!");
+                System.out.println("\nSaque realizado com sucesso!");
+                System.out.printf("Saldo atual: R$ %.2f\n\n", saldoConta);
           }
           else {
             System.out.println("Saldo insuficiente");
@@ -108,6 +112,7 @@ public class Conta {
            if (saldoConta > value) {
                saldoConta = saldoConta - value;
                System.out.println("Taxa subtraida do total com sucesso");
+               System.out.printf("Saldo atual: R$ %.2f", saldoConta);
             }
             else {
               System.out.println("Saldo insuficiente");
