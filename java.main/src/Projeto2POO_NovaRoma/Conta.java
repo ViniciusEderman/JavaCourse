@@ -85,7 +85,7 @@ public class Conta {
         if (statusConta = true) {
           if(saldoConta >= v) {
               saldoConta = saldoConta - v; 
-                System.out.println("\nSaque realizado com sucesso!");
+                System.out.println("Saque realizado com sucesso!");
                 System.out.printf("Saldo atual: R$ %.2f\n\n", saldoConta);
           }
           else {
