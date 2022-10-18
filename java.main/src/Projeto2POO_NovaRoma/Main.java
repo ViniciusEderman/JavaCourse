@@ -2,9 +2,11 @@ package Projeto2POO_NovaRoma;
 
 public class Main {
     public static void main(String[] args) {
-
+        
+        //instancia de objeto
         Conta p1 = new Conta();
 
+        //chamando os metodos com a variavel de instancia
         p1.abrirConta("CC");
         p1.estadoAtual();
         p1.depositar(1000);
