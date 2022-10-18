@@ -10,7 +10,7 @@ class Aluno {
     private String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
-    private int cont = 0;
+    private int cont = 0, cont1 = 0, cont2 = 0;
 
     //utilizando Arraylist para adicionar dados
     ArrayList<String> aluno = new ArrayList<>();
@@ -96,31 +96,43 @@ class Aluno {
         //buscando aluno atráves do nome
         System.out.println("Digite o nome do aluno: ");
         nome = entrada.next();
-        for (int i = 0; i < aluno.size(); i++) {
+        if(n1.isEmpty() == false){
+            for (int i = 0; i < n1.size(); i++) {
             
-            if(n1.isEmpty() == false && m.isEmpty() == false){
-                
-                if (aluno.get(i).equalsIgnoreCase(nome)) {
                 System.out.println("Aluno encontrado: " + aluno.get(i));
                 System.out.println("Disciplina: " + this.disciplina);
                 System.out.println("N1: " + n1.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N2: " + n2.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N3: " + n3.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("Media: " + m.get(aluno.indexOf(aluno.get(i))));
-               
-                }
-            } 
-
-            if(n1.isEmpty() == true && m.isEmpty() == true){
                 
-                if (aluno.get(i).equalsIgnoreCase(nome)) {
-                    System.out.println("Aluno encontrado: " + aluno.get(i));
-                    System.out.println("Disciplina: " + this.disciplina);
-                    System.out.println("Nenhuma nota encontrada no sistema");
-                }
             }
         }
-    }
+
+        if (aluno.size() > n1.size()) {
+            cont1 += n1.size();
+            cont2 = n1.size();
+
+            while(aluno.size() > cont2){
+
+            System.out.println("Aluno encontrado: " + aluno.get(cont1));
+            System.out.println("Disciplina: " + this.disciplina);
+            System.out.println("Nenhuma nota encontrada no Sistema");
+            cont1++;
+
+            if(aluno.size() == cont1){
+                break;
+            }
+            }
+        }
+        
+    } 
+
+            
+            
+            
+        
+    
 
     //Metodo para inserir Nota
     public void setInserirNota() {
@@ -175,14 +187,31 @@ class Aluno {
 
         System.out.println("Resumo dos alunos: ");
         System.out.println("ID   |   NOME   |   N1   |   N2   |  N3   |   MÉDIA   |   SITUAÇÃO   ");
-        for (int i = 0; i < aluno.size(); i++) {
-            
-                    System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
+     
+        if(n1.isEmpty() == false){
+           for (int i = 0; i < n1.size(); i++) {   
+                System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
                         + n3.get(i) + "   |   " +  m.get(i) + "   |   " + situacao);
+         }
+        } 
+        
+        if (aluno.size() > n1.size()) {
+              cont1 += n1.size();
+              cont2 = n1.size();
+            while(aluno.size() > cont2){
+                System.out.println((cont1) + "   |   " + aluno.get(cont1) + "   |    Nenhuma nota encontrada no sistema");
+                cont1++;
 
-        }
+                if(aluno.size() == cont1){
+                    break;
+                }
+            }   
+       
 
-    }
+        
+            
+    } 
+}
 
     //metodo para saber o maior valor
     public void CompararNotas() {
