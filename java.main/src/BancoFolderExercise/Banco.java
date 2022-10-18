@@ -79,7 +79,9 @@ class Banco {
     public void depositar(float v) {
         if (statusConta == true) {
             saldoConta += v;
+            saldoConta -= 0.1;
             System.out.println("Depósito realizado com sucesso na conta " + this.getdonoConta());
+            System.out.printf("Saldo atual: R$ %.2f\n", saldoConta);
         }
         else {
             System.out.println("Conta fechada, não é possível depositar");
@@ -90,6 +92,7 @@ class Banco {
           if(saldoConta >= v) {
               saldoConta = saldoConta - v; 
                 System.out.println("Saque realizado com sucesso na conta de " + this.getdonoConta());
+                System.out.printf("Saldo atual: R$ %.2f\n", saldoConta);
           }
           else {
             System.out.println("Saldo insuficiente");
