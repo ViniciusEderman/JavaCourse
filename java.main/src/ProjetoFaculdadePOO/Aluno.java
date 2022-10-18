@@ -95,15 +95,29 @@ class Aluno {
 
         //buscando aluno atráves do nome
         System.out.println("Digite o nome do aluno: ");
-        nome = entrada.nextLine();
+        nome = entrada.next();
         for (int i = 0; i < aluno.size(); i++) {
-            if (aluno.get(i).equalsIgnoreCase(nome)) {
+            
+            if(n1.isEmpty() == false && m.isEmpty() == false){
+                
+                if (aluno.get(i).equalsIgnoreCase(nome)) {
                 System.out.println("Aluno encontrado: " + aluno.get(i));
                 System.out.println("Disciplina: " + this.disciplina);
                 System.out.println("N1: " + n1.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N2: " + n2.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N3: " + n3.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("Media: " + m.get(aluno.indexOf(aluno.get(i))));
+               
+                }
+            } 
+
+            if(n1.isEmpty() == true && m.isEmpty() == true){
+                
+                if (aluno.get(i).equalsIgnoreCase(nome)) {
+                    System.out.println("Aluno encontrado: " + aluno.get(i));
+                    System.out.println("Disciplina: " + this.disciplina);
+                    System.out.println("Nenhuma nota encontrada no sistema");
+                }
             }
         }
     }
@@ -162,9 +176,10 @@ class Aluno {
         System.out.println("Resumo dos alunos: ");
         System.out.println("ID   |   NOME   |   N1   |   N2   |  N3   |   MÉDIA   |   SITUAÇÃO   ");
         for (int i = 0; i < aluno.size(); i++) {
-            System.out.println(
-                    (i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
-                            + n3.get(i) + "   |   " + m.get(i) + "   |   " + situacao);
+            
+                    System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
+                        + n3.get(i) + "   |   " +  m.get(i) + "   |   " + situacao);
+
         }
 
     }
