@@ -10,6 +10,7 @@ public class PautaEletronica {
     // metodo para um menu interativo
     public void Menu() {
             
+            System.out.println("=====================================");
         do{ 
             System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
 
@@ -32,7 +33,6 @@ public class PautaEletronica {
 
     //metodo para interação do objeto
     public void Interacao(){
-        
         System.out.println("=====================================");
         if (op == 1){
             aluno.setInserirAluno();

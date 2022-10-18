@@ -40,10 +40,10 @@ class Aluno {
 
         // insere alunos
         System.out.println("Digite o nome do aluno: ");
-        this.nome = entrada.nextLine();
-        aluno.add(nome);
-
-        // printa o aluno
+        this.nome = entrada.next();
+        aluno.add(this.nome);
+        
+        // confirmação que o aluno foi adicionado
         System.out.println("Aluno adicinonado com sucesso");
 
     }
@@ -58,6 +58,8 @@ class Aluno {
 
         System.out.println("Selecione um número para Remover: ");
         int op = entrada.nextInt();
+        
+        //verificar se o aluno tem nota para remover
         if (op == 1) {
             aluno.remove(op - 1);
             if (n1.isEmpty() == false){
@@ -81,6 +83,8 @@ class Aluno {
                     m.remove(op - 1);
                 }
             }
+
+            //confirmação da remoção do aluno
             System.out.println("Aluno Removido com sucesso");
         }
 
