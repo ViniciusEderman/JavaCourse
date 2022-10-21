@@ -128,12 +128,6 @@ class Aluno {
         
     } 
 
-            
-            
-            
-        
-    
-
     //Metodo para inserir Nota
     public void setInserirNota() {
         
