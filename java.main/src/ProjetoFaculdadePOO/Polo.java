@@ -3,6 +3,6 @@ package ProjetoFaculdadePOO;
 public abstract class Polo {
     
     public String local() {
-        return "Boa viagem";
+        return "BOA VIAGEM, RECIFE-PE";
     }
 }

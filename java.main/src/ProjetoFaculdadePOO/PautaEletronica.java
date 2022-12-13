@@ -2,7 +2,7 @@ package ProjetoFaculdadePOO;
 
 import java.util.Scanner;
 
-public class PautaEletronica implements entrada, funcionario, estudante {
+public class PautaEletronica extends senhaProfessor implements entrada, funcionario, estudante {
     Scanner entrada = new Scanner(System.in);
     Aluno aluno = new Aluno();
 
@@ -14,7 +14,7 @@ public class PautaEletronica implements entrada, funcionario, estudante {
         System.out.println("=====================================");
     do{ 
         System.out.println("     SEJA BEM VINDO!!                ");
-        System.out.println("=====================================");;
+        System.out.println("=====================================");
         System.out.println("       VOCÊ É:                       ");
         System.out.println("    | 1 - PROFESSOR                 |");
         System.out.println("    | 2 - ALUNO                     |");
@@ -37,6 +37,7 @@ public class PautaEletronica implements entrada, funcionario, estudante {
 
             System.out.println("=====================================");
             System.out.println("SEJA BEM VINDO " + aluno.nome());
+            System.out.println("POLO: " + local());
             System.out.println("    | 1 - INSERIR ALUNO             |");
             System.out.println("    | 2 - PESQUISAR ALUNO           |");
             System.out.println("    | 3 - INSERIR NOTAS             |");
@@ -50,37 +51,36 @@ public class PautaEletronica implements entrada, funcionario, estudante {
             op = entrada.nextInt();
             InteracaoFucionario();
         } while(op != 0);
-        
-    System.out.println("Saindo do sistema....");
     }
 
     // metodo para entrada estudante
     public void MenuA() {
             
-        System.out.println("=====================================");
-    do{ 
-        System.out.println("    SEJA BEM VINDO A AREA DO ALUNO!! ");
+            System.out.println("=====================================");
+     do{ 
+            System.out.println("    SEJA BEM VINDO A AREA DO ALUNO!! ");
 
-        System.out.println("=====================================");
-        System.out.println("    | 1 - PESQUISAR ALUNO           |");
-        System.out.println("    | 2 - RELATORIO ALUNOS          |");
-        System.out.println("    | 3 - INFORMACOES DISCIPLINA    |");
-        System.out.println("    | 4 - VOLTAR                    |");
-        System.out.println("    | 0 - SAIR                      |");
-        System.out.println("=====================================");
-        System.out.print("   Digite a opção desejada: ");
-        op = entrada.nextInt();
-        InteracaoAluno();
-    } while(op != 0);
-    
-System.out.println("Saindo do sistema....");
-}
+            System.out.println("=====================================");
+            System.out.println("    | 1 - PESQUISAR ALUNO           |");
+            System.out.println("    | 2 - RELATORIO ALUNOS          |");
+            System.out.println("    | 3 - INFORMACOES DISCIPLINA    |");
+            System.out.println("    | 4 - VOLTAR                    |");
+            System.out.println("    | 0 - SAIR                      |");
+            System.out.println("=====================================");
+            System.out.print("   Digite a opção desejada: ");
+            op = entrada.nextInt();
+            InteracaoAluno();
+        } while(op != 0);
+    }
 
     //metodo para interação do objeto entrada
     public void InteracaoEntrar(){
         System.out.println("=====================================");
         if (op == 1){
-                MenuP();
+                senha();
+                if(getPassword() == 123){
+                    MenuP();
+                }
         } 
         else if(op == 2){
                 MenuA();
