@@ -4,21 +4,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class senhaProfessor extends Polo {
-    public int password;
+    private int password;
+    Scanner entrada = new Scanner(System.in);
     
-    public void senha() {
-        Boolean loop = true;
-        Scanner dig = new Scanner(System.in);
+    public int getPassword() {
+        return password;
+    }
 
-        do{
+    public void setPassword(int password) {
+        this.password = password;
+    }
+
+    public void senha() {
+
             try {
                 System.out.println("DIGITE SUA SENHA: ");
-                password = dig.nextInt();
-                loop = false;
+                int senha = entrada.nextInt();
+                if(senha == 123){
+                    setPassword(senha);
+                }
             } catch(InputMismatchException InputMismatchException) {
                 System.out.println("ERRO! SENHA INCORRETA!");
-            }   
-        } while(loop);
-        dig.close();
+            }  finally {
+                System.out.println("carregando... ");
+            }
     }
+
 }

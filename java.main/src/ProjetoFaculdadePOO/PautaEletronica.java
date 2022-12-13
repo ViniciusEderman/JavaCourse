@@ -78,7 +78,7 @@ public class PautaEletronica extends senhaProfessor implements entrada, funciona
         System.out.println("=====================================");
         if (op == 1){
                 senha();
-                if(op == 123){
+                if(getPassword() == 123){
                     MenuP();
                 }
         } 
