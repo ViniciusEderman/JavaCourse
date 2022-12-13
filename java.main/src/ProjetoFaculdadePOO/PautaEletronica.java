@@ -1,6 +1,7 @@
 package ProjetoFaculdadePOO;
 
 import java.util.Scanner;
+//classe modelo 
 public class PautaEletronica {
     Scanner entrada = new Scanner(System.in);
     Aluno aluno = new Aluno();

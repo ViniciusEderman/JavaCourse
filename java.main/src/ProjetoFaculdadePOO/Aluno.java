@@ -3,11 +3,12 @@ package ProjetoFaculdadePOO;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// classe modelo
 class Aluno {
     Scanner entrada = new Scanner(System.in);
     
     // variables:
-    private String nome, situacao, disciplina;
+    public String nome, situacao, disciplina;
     private float nota1, nota2, nota3, media;
     private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
     private int cont = 0, cont1 = 0, cont2 = 0;
@@ -45,6 +46,18 @@ class Aluno {
         
         // confirmação que o aluno foi adicionado
         System.out.println("Aluno adicinonado com sucesso");
+
+    }
+
+    public void setInserirAlunoSobrecarga() {
+
+        // insere alunos
+        System.out.println("Digite o nome do aluno: ");
+        this.nome = entrada.next();
+        aluno.add(this.nome);
+        
+        // confirmação que o aluno foi adicionado e mostra o nome do aluno
+        System.out.println("O aluno está registrado com sucesso " + nome);
 
     }
 
@@ -176,8 +189,38 @@ class Aluno {
         m.add(media);
     }
 
+    //faza verificacao de nota usando uma logica de operadores distintos 
+    public void SobrescritaverificarNota() {
+
+        // Bloco de verificacao de quais notas entrarao na media
+        if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 >= this.nota1 && this.nota1 > this.nota3) {
+            media = (this.nota1 + this.nota2) / 2;
+        } else if (this.nota2 > this.nota1 && this.nota3 > this.nota1) {
+            media = (this.nota2 + this.nota3) / 2;
+        } else if (this.nota1 > this.nota2 && this.nota3 > this.nota2) {
+            media = (this.nota1 + this.nota3) / 2;
+        }
+
+        // bloco de verificacao de media:
+        if (media > 5) {
+            situacao = "aprovado";
+            // System.out.println(situacao);
+        } else if (media > 3 && nota3 == 0) {
+            situacao = "recuperação";
+            // System.out.println(situacao);
+        } else if (media < 6) {
+            situacao = "reprovado";
+            // System.out.println(situacao);
+        }
+
+        cont++;
+        mediaTotal += media;
+
+        m.add(media);
+    }
+
     //metodo para lista de alunos
-    public void Resumo() {
+public void Resumo() {
 
         System.out.println("Resumo dos alunos: ");
         System.out.println("ID   |   NOME   |   N1   |   N2   |  N3   |   MÉDIA   |   SITUAÇÃO   ");
@@ -199,16 +242,38 @@ class Aluno {
                 if(aluno.size() == cont1){
                     break;
                 }
-            }   
-       
-
-        
-            
+            }           
     } 
 }
 
-    //metodo para saber o maior valor
-    public void CompararNotas() {
+public void ResumoSobrecarga() {
+
+    System.out.println("Resumo dos alunos: ");
+    System.out.println("ID: \n NOME: \n N1: \n N2: \n N3: \n MÉDIA: \n SITUAÇÃO: ");
+ 
+    if(n1.isEmpty() == false){
+       for (int i = 0; i < n1.size(); i++) {   
+            System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
+                    + n3.get(i) + "   |   " +  m.get(i) + "   |   " + situacao);
+     }
+    } 
+    
+    if (aluno.size() > n1.size()) {
+          cont1 += n1.size();
+          cont2 = n1.size();
+        while(aluno.size() > cont2){
+            System.out.println((cont1) + "   |   " + aluno.get(cont1) + " Nenhuma nota está registrada no sistema");
+            cont1++;
+
+            if(aluno.size() == cont1){
+                break;
+            }
+        }           
+    } 
+}
+
+//metodo para saber o maior valor
+public void CompararNotas() {
          
         //calculo da maior media
         for (int i = 0; i < aluno.size(); i++) {
@@ -229,7 +294,7 @@ class Aluno {
                 maiorM = m.get(i);
             }
         }
-    }
+}
 
     //metodo para Relatorio de alunos
     public void ResumoGeral() {
@@ -254,5 +319,70 @@ class Aluno {
         System.out.println("Maior Média: " + maiorM);
         System.out.println("\tAluno: " + aluno.get(m.indexOf(maiorM)));
         System.out.println("\tMédia: " + m.get(m.indexOf(maiorM)));
+    }
+
+    // sobrescreve o metodo deixando o mais resumindo possível e imprimi a situacao do aluno
+    public void SobrecristaResumoGeral() {
+        CompararNotas();
+
+        System.out.println("Nome da Disciplina: " + disciplina);
+        System.out.println("Total de Alunos: " + aluno.size());
+        System.out.println("Media Geral: " + (mediaTotal / cont));
+
+        System.out.println("A situação do aluno é: " + situacao);
+    }
+}
+// herança de curso em relação a aluno 
+class Curso extends Aluno {
+    public String curso;
+
+    @Override
+    public void ResumoGeral() {
+        System.out.println("Nome do curso: " + curso);
+        super.ResumoGeral();
+    }
+
+    @Override
+    public void Resumo() {
+        System.out.println("O aluno do curso: " + curso + "está:" + situacao);
+        super.Resumo();
+    }
+}
+
+class Materia extends Curso {
+    public String materia;
+
+    @Override
+    public void buscarAluno() {
+        System.out.println("O aluno: " + aluno + "Está matriculado no curso:" + curso + "de materia: " + materia);
+        super.buscarAluno();
+    }
+}
+
+class participarMonitoria extends Curso {
+    public String nomeMonitoria;
+
+    @Override
+    public void buscarAluno() {
+        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "está inscrito no projeto monitoria");
+        super.buscarAluno();
+    }
+}
+
+class Monitor extends Aluno {
+    public String monitor;
+    public String curso;
+    
+
+    @Override
+    public void buscarAluno() {
+        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "está inscrito no projeto monitoria");
+        super.buscarAluno();
+    }
+
+    @Override
+    public void verificarNota() {
+        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "com nota maior que 09" + situacao + "está aprovado para monitor de sala");
+        super.verificarNota();
     }
 }
