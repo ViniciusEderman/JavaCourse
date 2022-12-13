@@ -4,14 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class senhaProfessor extends Polo {
-    private int password;
+    private String password;
     Scanner entrada = new Scanner(System.in);
     
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -19,10 +19,8 @@ public class senhaProfessor extends Polo {
 
             try {
                 System.out.println("DIGITE SUA SENHA: ");
-                int senha = entrada.nextInt();
-                if(senha == 123){
-                    setPassword(senha);
-                }
+                password = entrada.next();
+                acesso();
             } catch(InputMismatchException InputMismatchException) {
                 System.out.println("ERRO! SENHA INCORRETA!");
             }  finally {
@@ -30,4 +28,11 @@ public class senhaProfessor extends Polo {
             }
     }
 
+    public void acesso(){
+        if(password.equals("123")) {
+            setPassword(password);
+        } else {
+            System.out.println("Senha incorreta");
+        }
+    }
 }
