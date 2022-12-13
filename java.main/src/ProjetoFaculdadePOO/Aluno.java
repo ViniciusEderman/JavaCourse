@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // classe modelo
-class Aluno {
+class Aluno extends professor {
     Scanner entrada = new Scanner(System.in);
     
     // variables:

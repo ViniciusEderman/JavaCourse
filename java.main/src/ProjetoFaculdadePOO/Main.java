@@ -5,6 +5,6 @@ public class Main {
     
         PautaEletronica teste = new PautaEletronica();
 
-        teste.Menu();
+        teste.entrar();
     }
 }
