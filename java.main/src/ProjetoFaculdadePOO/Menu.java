@@ -2,11 +2,12 @@ package ProjetoFaculdadePOO;
 
 import java.util.Scanner;
 
-public class PautaEletronica extends senhaProfessor implements entrada, funcionario, estudante {
+public class Menu extends senhaProfessor implements entrada, funcionario, estudante {
     Scanner entrada = new Scanner(System.in);
     Aluno aluno = new Aluno();
 
     private int op;
+    private String nome;
 
     // metodo para entrada
     public void entrar() {
@@ -16,7 +17,7 @@ public class PautaEletronica extends senhaProfessor implements entrada, funciona
         System.out.println("     SEJA BEM VINDO!!                ");
         System.out.println("=====================================");
         System.out.println("       VOCÊ É:                       ");
-        System.out.println("    | 1 - PROFESSOR                 |");
+        System.out.println("    | 1 - FUNCIONARIO               |");
         System.out.println("    | 2 - ALUNO                     |");
         System.out.println("    | 0 - SAIR                      |");
         System.out.println("=====================================");
@@ -36,8 +37,9 @@ public class PautaEletronica extends senhaProfessor implements entrada, funciona
             System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
 
             System.out.println("=====================================");
-            System.out.println("SEJA BEM VINDO " + aluno.nome());
-            System.out.println("POLO: " + local());
+            System.out.println("SEJA BEM VINDO " + nome);
+            System.out.println("POLO: ");
+            System.out.println("Você é: " + cargo);
             System.out.println("    | 1 - INSERIR ALUNO             |");
             System.out.println("    | 2 - PESQUISAR ALUNO           |");
             System.out.println("    | 3 - INSERIR NOTAS             |");
@@ -77,7 +79,9 @@ public class PautaEletronica extends senhaProfessor implements entrada, funciona
     public void InteracaoEntrar(){
         System.out.println("=====================================");
         if (op == 1){
+                nomeProfessor();
                 senha();
+                cargo();
                 if(getPassword().equals("123")){
                     MenuP();
                 }
@@ -132,4 +136,12 @@ public class PautaEletronica extends senhaProfessor implements entrada, funciona
         }
         System.out.println("=====================================");
     }
+
+    //metodo para inserir nome
+    public void nomeProfessor(){
+        System.out.println("Digite o seu nome: ");
+        nome = entrada.next();
+    }
+
+
 }

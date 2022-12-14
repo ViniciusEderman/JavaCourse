@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // classe modelo
-class Aluno extends professor {
+class Aluno {
     Scanner entrada = new Scanner(System.in);
     
     // variables:
@@ -49,15 +49,12 @@ class Aluno extends professor {
 
     }
 
-    public void setInserirAlunoSobrecarga() {
-
-        // insere alunos
-        System.out.println("Digite o nome do aluno: ");
-        this.nome = entrada.next();
-        aluno.add(this.nome);
+    // sobrecarga interir aluno
+    public void setInserirAluno(String nome) {
         
-        // confirmação que o aluno foi adicionado e mostra o nome do aluno
-        System.out.println("O aluno está registrado com sucesso " + nome);
+        this.nome = nome;
+        // confirmação que o aluno foi adicionado
+        System.out.println("Aluno adicinonado com sucesso");
 
     }
 
@@ -189,9 +186,12 @@ class Aluno extends professor {
         m.add(media);
     }
 
-    //faza verificacao de nota usando uma logica de operadores distintos 
-    public void SobrescritaverificarNota() {
+    //Sobrecarga verificar nota
+    public void verificarNota(int n1, int n2, int n3) {
 
+        this.nota1 = n1;
+        this.nota2 = n2;
+        this.nota3 = n3;
         // Bloco de verificacao de quais notas entrarao na media
         if (this.nota1 >= this.nota2 && this.nota2 > this.nota3 || this.nota2 >= this.nota1 && this.nota1 > this.nota3) {
             media = (this.nota1 + this.nota2) / 2;
@@ -243,32 +243,6 @@ public void Resumo() {
                     break;
                 }
             }           
-    } 
-}
-
-public void ResumoSobrecarga() {
-
-    System.out.println("Resumo dos alunos: ");
-    System.out.println("ID: \n NOME: \n N1: \n N2: \n N3: \n MÉDIA: \n SITUAÇÃO: ");
- 
-    if(n1.isEmpty() == false){
-       for (int i = 0; i < n1.size(); i++) {   
-            System.out.println((i + 1) + "   |   " + aluno.get(i) + "   |   " + n1.get(i) + "   |   " + n2.get(i) + "   |   "
-                    + n3.get(i) + "   |   " +  m.get(i) + "   |   " + situacao);
-     }
-    } 
-    
-    if (aluno.size() > n1.size()) {
-          cont1 += n1.size();
-          cont2 = n1.size();
-        while(aluno.size() > cont2){
-            System.out.println((cont1) + "   |   " + aluno.get(cont1) + " Nenhuma nota está registrada no sistema");
-            cont1++;
-
-            if(aluno.size() == cont1){
-                break;
-            }
-        }           
     } 
 }
 

@@ -3,7 +3,7 @@ package ProjetoFaculdadePOO;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class senhaProfessor extends Polo {
+public class senhaProfessor extends pessoa {
     private String password;
     Scanner entrada = new Scanner(System.in);
     
@@ -13,6 +13,11 @@ public class senhaProfessor extends Polo {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String cargo() {
+        System.out.println("Digite seu cargo: ");
+        return cargo = entrada.next();
     }
 
     public void senha() {
