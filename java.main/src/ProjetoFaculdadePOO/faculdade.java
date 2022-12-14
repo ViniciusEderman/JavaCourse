@@ -19,3 +19,20 @@ public class faculdade {
     }
 
 }
+
+class monito extends faculdade {
+
+}
+class cursos extends faculdade {
+
+}
+
+class professor extends faculdade {
+    
+}
+
+class materia extends cursos {
+
+}
+
+
