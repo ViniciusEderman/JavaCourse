@@ -5,6 +5,6 @@ public class Main {
     
         Menu teste = new Menu();
 
-        teste.entrar();
+        teste.localFaculdade();
     }
 }

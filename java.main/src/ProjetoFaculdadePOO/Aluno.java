@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // classe modelo
-class Aluno {
+class Aluno extends faculdade {
     Scanner entrada = new Scanner(System.in);
     
     // variables:
-    public String nome, situacao, disciplina;
+    public String nome, situacao;
     private float nota1, nota2, nota3, media;
     private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
     private int cont = 0, cont1 = 0, cont2 = 0;
@@ -21,20 +21,6 @@ class Aluno {
     ArrayList<Float> m = new ArrayList<>();
 
     ArrayList<Float> resumo = new ArrayList<>();
-
-    // construtor:
-    public Aluno() {
-        // situacao == aprovado, reprovado e de recuperacao
-        this.disciplina = "Matemática";
-    }
-
-    // sobrecarga do construtor aluno
-    public Aluno(float nota1, float nota2, float nota3) {
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.nota3 = nota3;
-        this.disciplina = "Matemática";
-    }
 
     // metódo para inserir alunos no array
     public void setInserirAluno() {
@@ -304,59 +290,5 @@ public void CompararNotas() {
         System.out.println("Media Geral: " + (mediaTotal / cont));
 
         System.out.println("A situação do aluno é: " + situacao);
-    }
-}
-// herança de curso em relação a aluno 
-class Curso extends Aluno {
-    public String curso;
-
-    @Override
-    public void ResumoGeral() {
-        System.out.println("Nome do curso: " + curso);
-        super.ResumoGeral();
-    }
-
-    @Override
-    public void Resumo() {
-        System.out.println("O aluno do curso: " + curso + "está:" + situacao);
-        super.Resumo();
-    }
-}
-
-class Materia extends Curso {
-    public String materia;
-
-    @Override
-    public void buscarAluno() {
-        System.out.println("O aluno: " + aluno + "Está matriculado no curso:" + curso + "de materia: " + materia);
-        super.buscarAluno();
-    }
-}
-
-class participarMonitoria extends Curso {
-    public String nomeMonitoria;
-
-    @Override
-    public void buscarAluno() {
-        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "está inscrito no projeto monitoria");
-        super.buscarAluno();
-    }
-}
-
-class Monitor extends Aluno {
-    public String monitor;
-    public String curso;
-    
-
-    @Override
-    public void buscarAluno() {
-        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "está inscrito no projeto monitoria");
-        super.buscarAluno();
-    }
-
-    @Override
-    public void verificarNota() {
-        System.out.println("O aluno: " + aluno + "matriculado no curso:" + curso + "com nota maior que 09" + situacao + "está aprovado para monitor de sala");
-        super.verificarNota();
     }
 }
