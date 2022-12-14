@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // classe modelo
-class Aluno extends faculdade {
+class Aluno {
     Scanner entrada = new Scanner(System.in);
-    
+
     // variables:
+    public String disciplina = "";
     public String nome, situacao;
     private float nota1, nota2, nota3, media;
     private float maior1 = 0, maior2 = 0, maior3 = 0, maiorM = 0, mediaTotal = 0;
@@ -21,6 +22,11 @@ class Aluno extends faculdade {
     ArrayList<Float> m = new ArrayList<>();
 
     ArrayList<Float> resumo = new ArrayList<>();
+    
+    public void adicionarDisciplina() {
+        System.out.println("Qual é a sua disciplina: ");
+        disciplina = entrada.next();
+    }
 
     // metódo para inserir alunos no array
     public void setInserirAluno() {
@@ -86,6 +92,51 @@ class Aluno extends faculdade {
 
     }
 
+    //metodo para atualizar dados
+    public void atualizarDados() {
+        for(int i = 0; i < aluno.size();i++) {
+            System.out.println((i + 1) + "-" + aluno.get(i));
+        }
+
+        System.out.println("Selecione o aluno para ser alterado:");
+        int op = entrada.nextInt();
+        
+        if(op >= 1) {
+
+            System.out.println("Gostaria de modificar o nome de " + aluno.get(op - 1) + " ?");
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+            int op1 = entrada.nextInt();
+
+            if (op1 == 1){
+                System.out.println("Digite o nome: ");
+                String nome1 = entrada.next();
+                aluno.set((op-1), nome1);
+            }
+            
+            for(int i = 0; i < 3; i++) {
+                System.out.println("Gostaria de modificar a " + (i+1) + "° nota de " + aluno.get(op - 1) + " ?");
+                System.out.println("1 - Sim");
+                System.out.println("2 - Não");
+                op1 = entrada.nextInt();
+
+                if (op1 == 1){
+                    System.out.println("Digite o nome: ");
+                    if (i == 0) {
+                        nota1 = entrada.nextInt();
+                        n1.set((op - 1), nota1);
+                    } else if (i == 1) {
+                        nota2 = entrada.nextInt();
+                        n2.set((op - 1), nota2);
+                    } else {
+                        nota3 = entrada.nextInt();
+                        n3.set((op - 1), nota3);
+                    }
+                }
+            }
+        }
+    }
+
     //metodo para buscar aluno
     public void buscarAluno() {
 
@@ -96,7 +147,7 @@ class Aluno extends faculdade {
             for (int i = 0; i < n1.size(); i++) {
             
                 System.out.println("Aluno encontrado: " + aluno.get(i));
-                System.out.println("Disciplina: " + this.disciplina);
+                System.out.println("Disciplina: " + disciplina);
                 System.out.println("N1: " + n1.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N2: " + n2.get(aluno.indexOf(aluno.get(i))));
                 System.out.println("N3: " + n3.get(aluno.indexOf(aluno.get(i))));
@@ -106,22 +157,21 @@ class Aluno extends faculdade {
         }
 
         if (aluno.size() > n1.size()) {
-            cont1 += n1.size();
-            cont2 = n1.size();
+                cont1 += n1.size();
+                cont2 = n1.size();
 
             while(aluno.size() > cont2){
 
-            System.out.println("Aluno encontrado: " + aluno.get(cont1));
-            System.out.println("Disciplina: " + this.disciplina);
-            System.out.println("Nenhuma nota encontrada no Sistema");
-            cont1++;
+                System.out.println("Aluno encontrado: " + aluno.get(cont1));
+                System.out.println("Disciplina: " + disciplina);
+                System.out.println("Nenhuma nota encontrada no Sistema");
+                cont1++;
 
-            if(aluno.size() == cont1){
-                break;
+                if(aluno.size() == cont1){
+                    break;
+                }
             }
-            }
-        }
-        
+        }     
     } 
 
     //Metodo para inserir Nota
@@ -229,12 +279,12 @@ public void Resumo() {
                     break;
                 }
             }           
-    } 
-}
+        } 
+    }
 
-//metodo para saber o maior valor
-public void CompararNotas() {
-         
+    //metodo para saber o maior valor
+    public void CompararNotas() {
+            
         //calculo da maior media
         for (int i = 0; i < aluno.size(); i++) {
 
@@ -254,12 +304,11 @@ public void CompararNotas() {
                 maiorM = m.get(i);
             }
         }
-}
+    }
 
     //metodo para Relatorio de alunos
     public void ResumoGeral() {
         CompararNotas();
-
         System.out.println("Nome da Disciplina: " + disciplina);
         System.out.println("Total de Alunos: " + aluno.size());
         System.out.println("Media Geral: " + (mediaTotal / cont));
@@ -279,16 +328,5 @@ public void CompararNotas() {
         System.out.println("Maior Média: " + maiorM);
         System.out.println("\tAluno: " + aluno.get(m.indexOf(maiorM)));
         System.out.println("\tMédia: " + m.get(m.indexOf(maiorM)));
-    }
-
-    // sobrescreve o metodo deixando o mais resumindo possível e imprimi a situacao do aluno
-    public void SobrecristaResumoGeral() {
-        CompararNotas();
-
-        System.out.println("Nome da Disciplina: " + disciplina);
-        System.out.println("Total de Alunos: " + aluno.size());
-        System.out.println("Media Geral: " + (mediaTotal / cont));
-
-        System.out.println("A situação do aluno é: " + situacao);
     }
 }

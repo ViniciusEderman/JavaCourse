@@ -10,6 +10,7 @@ public class faculdade extends Polo {
     public String turno;
     public String disciplina;
     
+    
     public String local() {
         System.out.println("Digite o local da faculdade: (digite sair para desligar o programa)");
         return local = entrada.next();
@@ -37,7 +38,7 @@ class professor extends faculdade {
 }
 
 class disciplina extends cursos {
-    
+
     public void adicionarDisciplina() {
         System.out.println("Qual é a sua disciplina: ");
         disciplina = entrada.next();

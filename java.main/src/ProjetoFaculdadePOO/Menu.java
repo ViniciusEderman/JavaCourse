@@ -12,6 +12,7 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
     cursos curso = new cursos();
     disciplina disci = new disciplina();
 
+    String disciplina;
     private int op;
     private boolean loop = true;
 
@@ -66,18 +67,19 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
             System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
 
             System.out.println("=====================================");
-            System.out.println("SEJA BEM VINDO " + prof.nome);
-            System.out.println("POLO: " + polo.local);
-            System.out.println("Você é: " + cargo);
-            System.out.println("Da diciplina: " + disci.disciplina);
+            System.out.println("SEJA BEM VINDO " + prof.nome.toUpperCase().strip());
+            System.out.println("POLO: " + polo.local.toUpperCase().strip());
+            System.out.println("Você é: " + cargo.toUpperCase().strip());
+            System.out.println("Da diciplina: " + aluno.disciplina.toUpperCase().strip());
             System.out.println("Do turno: " + prof.turno());
             System.out.println("    | 1 - INSERIR ALUNO             |");
             System.out.println("    | 2 - PESQUISAR ALUNO           |");
             System.out.println("    | 3 - INSERIR NOTAS             |");
-            System.out.println("    | 4 - EXCLUIR ALUNO             |");
-            System.out.println("    | 5 - RELATORIO ALUNOS          |");
-            System.out.println("    | 6 - INFORMACOES DISCIPLINA    |");
-            System.out.println("    | 7 - VOLTAR                    |");
+            System.out.println("    | 4 - ATUALIZAR NOTAS           |");
+            System.out.println("    | 5 - EXCLUIR ALUNO             |");
+            System.out.println("    | 6 - RELATORIO ALUNOS          |");
+            System.out.println("    | 7 - INFORMACOES DISCIPLINA    |");
+            System.out.println("    | 8 - VOLTAR                    |");
             System.out.println("    | 0 - SAIR                      |");
             System.out.println("=====================================");
             System.out.print("   Digite a opção desejada: ");
@@ -114,15 +116,20 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
         if (op == 1){
                 prof.nomeProfessor();
                 senha();
-                cargo();
-                disci.adicionarDisciplina();
                 if(getPassword().equals("123")){
+                    cargo();
+                    disci.adicionarDisciplina();
+                    aluno.disciplina = disci.disciplina;
                     MenuP();
                 }
             } 
             else if(op == 2){
                 curso.nomeDoCurso();
+                aluno.adicionarDisciplina();
                 MenuA();
+        }
+        else if(op != 0){
+            System.out.println("=====================================");
         }
     }
 
@@ -139,16 +146,22 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
             aluno.setInserirNota();
             aluno.verificarNota();
         }
-        else if(op == 4){
-            aluno.remover();
+        else if(op == 4) {
+            aluno.atualizarDados();
         }
         else if(op == 5){
-            aluno.Resumo();
+            aluno.remover();
         }
         else if(op == 6){
+            aluno.Resumo();
+        }
+        else if(op == 7){
             aluno.ResumoGeral();
-        } else if(op == 7) {
+        } 
+        else if(op == 8) {
             entrar();
+        } else if(op != 0){
+            System.out.println("=====================================");
         }
     }
 
@@ -166,6 +179,9 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
         }
         else if(op == 4) {
             entrar();
+        }
+        else if(op != 0){
+            System.out.println("=====================================");
         }
     }
 
