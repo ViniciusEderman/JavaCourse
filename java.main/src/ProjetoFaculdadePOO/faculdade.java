@@ -13,7 +13,7 @@ public class faculdade extends Polo {
     
     public String local() {
         System.out.println("Digite o local da faculdade: (digite sair para desligar o programa)");
-        return local = entrada.next();
+        return local = entrada.nextLine();
     }
 }
 //heranças

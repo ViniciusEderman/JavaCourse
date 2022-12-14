@@ -60,7 +60,7 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
             cancelarLoop();
             InteracaoEntrar();
         } catch (InputMismatchException InputMismatchException) {
-            System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+            System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVOR UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
             entrada.nextLine();
         } finally {
             System.out.println("carregando... ");
@@ -98,7 +98,7 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
                     cancelarLoop();
                     InteracaoFucionario();
                 } catch (InputMismatchException InputMismatchException) {
-                    System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+                    System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVOR UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
                     entrada.nextLine();
                 }
         } while(op != 0);
@@ -124,7 +124,7 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
                 cancelarLoop();
                 InteracaoAluno();
             } catch (InputMismatchException InputMismatchException) {
-                System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+                System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVOR UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
                 entrada.nextLine();
             }
         } while(op != 0);

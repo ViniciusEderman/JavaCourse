@@ -121,7 +121,7 @@ class Aluno {
                 op1 = entrada.nextInt();
 
                 if (op1 == 1){
-                    System.out.println("Digite o nome: ");
+                    System.out.println("Digite a nota da N" + (i+1) + "?");
                     if (i == 0) {
                         nota1 = entrada.nextInt();
                         n1.set((op - 1), nota1);
@@ -135,6 +135,10 @@ class Aluno {
                 }
             }
         }
+
+        verificarNota();
+        m.set((op - 1), media);
+        
     }
 
     //metodo para buscar aluno
@@ -144,15 +148,15 @@ class Aluno {
         System.out.println("Digite o nome do aluno: ");
         nome = entrada.next();
         if(n1.isEmpty() == false){
-            for (int i = 0; i < n1.size(); i++) {
+            for (int i = 0; i < n1.size();) {
             
-                System.out.println("Aluno encontrado: " + aluno.get(i));
+                System.out.println("Aluno encontrado: " + aluno.get(aluno.indexOf(nome)));
                 System.out.println("Disciplina: " + disciplina);
-                System.out.println("N1: " + n1.get(aluno.indexOf(aluno.get(i))));
-                System.out.println("N2: " + n2.get(aluno.indexOf(aluno.get(i))));
-                System.out.println("N3: " + n3.get(aluno.indexOf(aluno.get(i))));
-                System.out.println("Media: " + m.get(aluno.indexOf(aluno.get(i))));
-                
+                System.out.println("N1: " + n1.get(aluno.indexOf(nome)));
+                System.out.println("N2: " + n2.get(aluno.indexOf(nome)));
+                System.out.println("N3: " + n3.get(aluno.indexOf(nome)));
+                System.out.println("Media: " + m.get(aluno.indexOf(nome)));
+                break;    
             }
         }
 

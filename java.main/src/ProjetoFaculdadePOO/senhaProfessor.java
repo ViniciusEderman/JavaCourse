@@ -25,7 +25,10 @@ public class senhaProfessor extends pessoa {
             try {
                 System.out.println("DIGITE SUA SENHA: ");
                 password = entrada.nextInt();
-                acesso();
+                if(password == 123) {
+                    acesso();
+                    break;
+                }
             } catch(InputMismatchException InputMismatchException) {
                 System.out.println("ERRO! SENHA INCORRETA!");
                 
