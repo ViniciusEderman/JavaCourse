@@ -1,5 +1,6 @@
 package ProjetoFaculdadePOO;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu extends senhaProfessor implements entrada, funcionario, estudante {
@@ -47,66 +48,85 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
     public void entrar() {
         System.out.println("=====================================");
     do{ 
-        System.out.println("     VOCÊ É:                         ");
-        System.out.println("=====================================");
-        System.out.println("    | 1 - FUNCIONARIO               |");
-        System.out.println("    | 2 - ALUNO                     |");
-        System.out.println("    | 0 - SAIR                      |");
-        System.out.println("=====================================");
-        System.out.print("   Digite a opção desejada: ");
-        op = entrada.nextInt();
-        cancelarLoop();
-        InteracaoEntrar();
+        try {
+            System.out.println("     VOCÊ É:                         ");
+            System.out.println("=====================================");
+            System.out.println("    | 1 - FUNCIONARIO               |");
+            System.out.println("    | 2 - ALUNO                     |");
+            System.out.println("    | 0 - SAIR                      |");
+            System.out.println("=====================================");
+            System.out.print("   Digite a opção desejada: ");
+            op = entrada.nextInt();
+            cancelarLoop();
+            InteracaoEntrar();
+        } catch (InputMismatchException InputMismatchException) {
+            System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+            entrada.nextLine();
+        } finally {
+            System.out.println("carregando... ");
+        }
+
     } while(op != 0);
+        System.out.println("PROGRAMA FINALIZADO!!!!");
     }
     
 // metodo para professor/funcionario
     public void MenuP() {
             System.out.println("=====================================");
         do{ 
-            System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
+            try{
+                    System.out.println("     SISTEMA PARA CONTROLE DE NOTAS");
 
-            System.out.println("=====================================");
-            System.out.println("SEJA BEM VINDO " + prof.nome.toUpperCase().strip());
-            System.out.println("POLO: " + polo.local.toUpperCase().strip());
-            System.out.println("Você é: " + cargo.toUpperCase().strip());
-            System.out.println("Da diciplina: " + aluno.disciplina.toUpperCase().strip());
-            System.out.println("Do turno: " + prof.turno());
-            System.out.println("    | 1 - INSERIR ALUNO             |");
-            System.out.println("    | 2 - PESQUISAR ALUNO           |");
-            System.out.println("    | 3 - INSERIR NOTAS             |");
-            System.out.println("    | 4 - ATUALIZAR NOTAS           |");
-            System.out.println("    | 5 - EXCLUIR ALUNO             |");
-            System.out.println("    | 6 - RELATORIO ALUNOS          |");
-            System.out.println("    | 7 - INFORMACOES DISCIPLINA    |");
-            System.out.println("    | 8 - VOLTAR                    |");
-            System.out.println("    | 0 - SAIR                      |");
-            System.out.println("=====================================");
-            System.out.print("   Digite a opção desejada: ");
-            op = entrada.nextInt();
-            cancelarLoop();
-            InteracaoFucionario();
+                    System.out.println("=====================================");
+                    System.out.println("SEJA BEM VINDO " + prof.nome.toUpperCase().strip());
+                    System.out.println("POLO: " + polo.local.toUpperCase().strip());
+                    System.out.println("Você é: " + cargo.toUpperCase().strip());
+                    System.out.println("Da diciplina: " + aluno.disciplina.toUpperCase().strip());
+                    System.out.println("Do turno: " + prof.turno());
+                    System.out.println("    | 1 - INSERIR ALUNO             |");
+                    System.out.println("    | 2 - PESQUISAR ALUNO           |");
+                    System.out.println("    | 3 - INSERIR NOTAS             |");
+                    System.out.println("    | 4 - ATUALIZAR NOTAS           |");
+                    System.out.println("    | 5 - EXCLUIR ALUNO             |");
+                    System.out.println("    | 6 - RELATORIO ALUNOS          |");
+                    System.out.println("    | 7 - INFORMACOES DISCIPLINA    |");
+                    System.out.println("    | 8 - VOLTAR                    |");
+                    System.out.println("    | 0 - SAIR                      |");
+                    System.out.println("=====================================");
+                    System.out.print("   Digite a opção desejada: ");
+                    op = entrada.nextInt();
+                    cancelarLoop();
+                    InteracaoFucionario();
+                } catch (InputMismatchException InputMismatchException) {
+                    System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+                    entrada.nextLine();
+                }
         } while(op != 0);
     }
 
     // metodo para entrada estudante
     public void MenuA() {
             System.out.println("=====================================");
-     do{ 
-            System.out.println("    SEJA BEM VINDO A AREA DO ALUNO!! ");
+        do{ 
+            try {
+                System.out.println("    SEJA BEM VINDO A AREA DO ALUNO!! ");
 
-            System.out.println("=====================================");
-            System.out.println("Seu curso é: " + curso.curso);
-            System.out.println("    | 1 - PESQUISAR ALUNO           |");
-            System.out.println("    | 2 - RELATORIO ALUNOS          |");
-            System.out.println("    | 3 - INFORMACOES DISCIPLINA    |");
-            System.out.println("    | 4 - VOLTAR                    |");
-            System.out.println("    | 0 - SAIR                      |");
-            System.out.println("=====================================");
-            System.out.print("   Digite a opção desejada: ");
-            op = entrada.nextInt();
-            cancelarLoop();
-            InteracaoAluno();
+                System.out.println("=====================================");
+                System.out.println("Seu curso é: " + curso.curso);
+                System.out.println("    | 1 - PESQUISAR ALUNO           |");
+                System.out.println("    | 2 - RELATORIO ALUNOS          |");
+                System.out.println("    | 3 - INFORMACOES DISCIPLINA    |");
+                System.out.println("    | 4 - VOLTAR                    |");
+                System.out.println("    | 0 - SAIR                      |");
+                System.out.println("=====================================");
+                System.out.print("   Digite a opção desejada: ");
+                op = entrada.nextInt();
+                cancelarLoop();
+                InteracaoAluno();
+            } catch (InputMismatchException InputMismatchException) {
+                System.out.println("ERRO! OPÇÃO INCORRETA! POR FAVO UTILIZE APENAS OS NÚMERO QUE ESTÃO NA TELA!");
+                entrada.nextLine();
+            }
         } while(op != 0);
     }
 
@@ -116,7 +136,7 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
         if (op == 1){
                 prof.nomeProfessor();
                 senha();
-                if(getPassword().equals("123")){
+                if(getPassword() == 123){
                     cargo();
                     disci.adicionarDisciplina();
                     aluno.disciplina = disci.disciplina;
@@ -128,7 +148,8 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
                 aluno.adicionarDisciplina();
                 MenuA();
         }
-        else if(op != 0){
+        
+        if(op != 0){
             System.out.println("=====================================");
         }
     }
@@ -160,7 +181,9 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
         } 
         else if(op == 8) {
             entrar();
-        } else if(op != 0){
+        } 
+        
+        if(op != 0){
             System.out.println("=====================================");
         }
     }
@@ -180,7 +203,8 @@ public class Menu extends senhaProfessor implements entrada, funcionario, estuda
         else if(op == 4) {
             entrar();
         }
-        else if(op != 0){
+        
+        if(op != 0){
             System.out.println("=====================================");
         }
     }
