@@ -1,5 +1,4 @@
 package Estudo;
-import java.util.Scanner;
 
 public class InvertendoString {
 
@@ -18,5 +17,4 @@ public class InvertendoString {
         System.out.println(reverse(teste));
 
     }
-
 } 
